@@ -13,7 +13,7 @@ const onSignUp = function (event) {
 
   api.signUp(signUpData)
   .done(function (data, textStatus, jqXHR) {
-    api.autoSignIn(data, textStatus, jqXHR, signUpData)
+    api.signIn(data, textStatus, jqXHR, signUpData)
       .done(ui.signInSuccess)
       .fail(ui.logInFailure);
   })
