@@ -27,9 +27,21 @@ const onSignIn = function (event) {
     .fail(ui.failure);
 };
 
+const onChangePassword = function (event) {
+  event.preventDefault();
+  let form = event.target;
+
+  let data = getFormFields(form);
+
+  api.changePassword(data)
+    .done(ui.changePasswordSuccess)
+    .fail(ui.failure);
+};
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
+  $('#change-password').on('submit', onChangePassword);
 };
 
 module.exports = {

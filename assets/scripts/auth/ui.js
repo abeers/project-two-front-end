@@ -11,6 +11,10 @@ const signInSuccess = (data) => {
   console.log(app.user);
 };
 
+const changePasswordSuccess = () => {
+  console.log("Password successfully changed.");
+};
+
 const failure = (error) => {
   console.error(error);
 };
@@ -18,5 +22,6 @@ const failure = (error) => {
 module.exports = {
   signUpSuccess,
   signInSuccess,
+  changePasswordSuccess,
   failure
 };
