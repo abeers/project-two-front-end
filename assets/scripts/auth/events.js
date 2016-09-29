@@ -16,8 +16,20 @@ const onSignUp = function (event) {
     .fail(ui.failure);
 };
 
+const onSignIn = function (event) {
+  event.preventDefault();
+  let form = event.target;
+
+  let data = getFormFields(form);
+
+  api.signIn(data)
+    .done(ui.signInSuccess)
+    .fail(ui.failure);
+};
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
+  $('#sign-in').on('submit', onSignIn);
 };
 
 module.exports = {
