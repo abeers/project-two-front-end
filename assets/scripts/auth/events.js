@@ -9,11 +9,15 @@ const onSignUp = function (event) {
   event.preventDefault();
   let form = event.target;
 
-  let data = getFormFields(form);
+  let signUpData = getFormFields(form);
 
-  api.signUp(data)
-    .done(ui.signUpSuccess)
-    .fail(ui.failure);
+  api.signUp(signUpData)
+  .done(function (data, textStatus, jqXHR) {
+    api.autoSignIn(data, textStatus, jqXHR, signUpData)
+      .done(ui.signInSuccess)
+      .fail(ui.logInFailure);
+  })
+  .fail(ui.signUpFailure);
 };
 
 const onSignIn = function (event) {
