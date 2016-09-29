@@ -24,9 +24,21 @@ const onAddRecipe = function (event) {
     .fail(ui.failure);
 };
 
+const onUpdateRecipe = function (event) {
+  event.preventDefault();
+  let form = event.target;
+
+  let data = getFormFields(form);
+
+  api.updateRecipe(data)
+    .done(ui.updateRecipeSuccess)
+    .fail(ui.failure);
+};
+
 const addHandlers = () => {
   $('#index-recipes').on('submit', onIndexRecipes);
   $('#add-recipe').on('submit', onAddRecipe);
+  $('#update-recipe').on('submit', onUpdateRecipe);
 };
 
 module.exports = {

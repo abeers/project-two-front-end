@@ -8,6 +8,10 @@ const addRecipeSuccess = () => {
   console.log("Recipe successfully added.");
 };
 
+const updateRecipeSuccess = () => {
+  console.log("Recipe successfully updated.");
+};
+
 const failure = (error) => {
   console.error(error);
 };
@@ -15,5 +19,6 @@ const failure = (error) => {
 module.exports = {
   indexRecipesSuccess,
   addRecipeSuccess,
+  updateRecipeSuccess,
   failure
 };
