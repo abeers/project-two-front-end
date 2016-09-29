@@ -5,6 +5,14 @@ const getFormFields = require('../../../lib/get-form-fields');
 const api = require('./api');
 const ui = require('./ui');
 
+const onIndexRecipes = function (event) {
+  event.preventDefault();
+
+  api.indexRecipes()
+    .done(ui.indexRecipesSuccess)
+    .fail(ui.failure);
+};
+
 const onAddRecipe = function (event) {
   event.preventDefault();
   let form = event.target;
@@ -17,6 +25,7 @@ const onAddRecipe = function (event) {
 };
 
 const addHandlers = () => {
+  $('#index-recipes').on('submit', onIndexRecipes);
   $('#add-recipe').on('submit', onAddRecipe);
 };
 
