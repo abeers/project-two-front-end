@@ -9,6 +9,15 @@ const indexIngredients = () => {
   });
 };
 
+const addIngredient = (data) => {
+  return $.ajax({
+    url: app.host + '/ingredients',
+    method: 'POST',
+    data: data
+  });
+};
+
 module.exports = {
-  indexIngredients
+  indexIngredients,
+  addIngredient
 };
