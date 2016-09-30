@@ -4,7 +4,9 @@ const authEvents = require('./auth/events.js');
 const recipeEvents = require('./recipes/events.js');
 const ingredientEvents = require('./ingredients/events.js');
 const recipeingredientEvents = require('./recipeingredients/events.js');
-const viewState = require('./viewstates.js');
+const viewStateEvents = require('./viewstates/events.js');
+
+const viewStateUi = require('./viewstates/ui.js');
 
 // On document ready
 $(() => {
@@ -12,5 +14,6 @@ $(() => {
   recipeEvents.addHandlers();
   ingredientEvents.addHandlers();
   recipeingredientEvents.addHandlers();
-  viewState.setInitialView();
+  viewStateEvents.addHandlers();
+  viewStateUi.setInitialView();
 });
