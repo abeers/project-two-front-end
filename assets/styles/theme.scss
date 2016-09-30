@@ -8,8 +8,12 @@ $navbar-font-color: shade($font-color, 30);
 $welcome-button-font-color: $white;
 
 $body-max-width: 650px;
+$main-image-width: 400px;
+
 $body-vertical-margin: 100px;
 $button-margin: 20px;
+$main-image-margin: 50px;
+
 $welcome-button-horizontal-padding: 50px;
 
 body {
@@ -20,6 +24,17 @@ body {
   margin: $body-vertical-margin auto 0;
   max-width: $body-max-width;
   text-align: center;
+}
+
+.main_image {
+  margin: $main-image-margin;
+  width: $main-image-width;
+}
+
+.main_title {
+  color: tint($font-color, 25);
+  font-family: $title-font-family;
+  font-size: 8 * $font-size;
 }
 
 .navbar {
@@ -40,7 +55,7 @@ body {
 }
 
 .welcome_button {
-  color: $white;
+  color: $welcome-button-font-color;
   font-size: 2 * $font-size;
   margin: $button-margin;
   padding: 0 $welcome-button-horizontal-padding;
