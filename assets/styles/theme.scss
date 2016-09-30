@@ -1,0 +1,14 @@
+$background-color: $cream;
+$navbar-background-color: tint($buttercup, 10);
+$font-color: $charcoal;
+$navbar-font-color: shade($font-color, 30);
+
+body {
+  background-color: $background-color;
+  color: $font-color;
+}
+
+.navbar {
+  background-color: $navbar-background-color;
+  color: $navbar-font-color;
+}

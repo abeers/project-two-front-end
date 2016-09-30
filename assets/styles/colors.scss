@@ -1,0 +1,16 @@
+$buttercup: #ffe545;
+$cream: #fefbaf;
+$goldenbrown: #c2a34f;
+$goldenorange: #fbb829;
+$bluegreen: #026475;
+$charcoal: #4e4e4e;
+$white: #fff;
+$black: #000;
+
+@function tint($color, $percentage) {
+  @return mix($white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix($black, $color, $percentage);
+}
