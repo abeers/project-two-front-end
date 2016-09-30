@@ -1,14 +1,47 @@
 $background-color: $cream;
 $navbar-background-color: tint($buttercup, 10);
+$nav-button-background-color: $goldenorange;
+$welcome-button-background-color: $bluegreen;
+
 $font-color: $charcoal;
 $navbar-font-color: shade($font-color, 30);
+$welcome-button-font-color: $white;
+
+$body-max-width: 650px;
+$body-vertical-margin: 100px;
+$button-margin: 20px;
+$welcome-button-horizontal-padding: 50px;
 
 body {
   background-color: $background-color;
   color: $font-color;
+  font-size: $font-size;
+  line-height: $line-height;
+  margin: $body-vertical-margin auto 0;
+  max-width: $body-max-width;
+  text-align: center;
 }
 
 .navbar {
   background-color: $navbar-background-color;
   color: $navbar-font-color;
+}
+
+.nav_button_style {
+  background-color: $nav-button-background-color;
+}
+
+.sign_in_button {
+  background-color: shade($welcome-button-background-color, 25);
+}
+
+.sign_up_button {
+  background-color: tint($welcome-button-background-color, 25);
+}
+
+.welcome_button {
+  color: $white;
+  font-size: 2 * $font-size;
+  margin: $button-margin;
+  padding: 0 $welcome-button-horizontal-padding;
 }
