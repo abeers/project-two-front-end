@@ -1,21 +1,28 @@
 @import 'breakpoint';
 
 body {
-  @include breakpoint(tiny) {
-    max-width: 100%;
+  @include breakpoint(small) {
+    margin: .5 * $body-vertical-margin;
+    max-width: 650px;
   }
 }
 
 .main_image {
-  @include breakpoint(tiny) {
-    width: 200px;
+  @include breakpoint(small) {
+    width: 250px;
+  }
+}
+
+.main_title {
+  @include breakpoint(small) {
+    font-size: 6 * $font-size;
   }
 }
 
 .welcome_button {
-  @include breakpoint(tiny) {
-    font-size: 1 * $font-size;
-    padding: 10px .7 * $welcome-button-horizontal-padding;
-    margin: 0 .7 * $button-margin;
+  @include breakpoint(small) {
+    font-size: 1.5 * $font-size;
+    margin: 0 1.2 * $button-margin;
+    padding: $welcome-button-vertical-padding 1.2 * $welcome-button-horizontal-padding;
   }
 }

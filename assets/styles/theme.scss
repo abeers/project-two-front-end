@@ -7,14 +7,15 @@ $font-color: $charcoal;
 $navbar-font-color: shade($font-color, 30);
 $welcome-button-font-color: $white;
 
-$body-max-width: 650px;
-$main-image-width: 250px;
+$body-max-width: 100%;
+$main-image-width: 200px;
 
-$body-vertical-margin: 100px;
-$button-margin: 20px;
+$body-vertical-margin: 90px;
+$button-margin: 15px;
 $main-image-margin: 50px;
 
-$welcome-button-horizontal-padding: 50px;
+$welcome-button-vertical-padding: 10px;
+$welcome-button-horizontal-padding: 35px;
 
 body {
   background-color: $background-color;
@@ -37,7 +38,9 @@ body {
 // }
 
 .main_image {
-  margin: $main-image-margin;
+  display: block;
+  margin: $main-image-margin auto;
+  padding: auto;
   width: $main-image-width;
 }
 
@@ -55,7 +58,7 @@ body {
 
 .nav_button_style {
   background-color: $nav-button-background-color;
-  font-size: 0.9 * $font-size;
+  font-size: .9 * $font-size;
 }
 
 .sign_in_button {
@@ -68,7 +71,7 @@ body {
 
 .welcome_button {
   color: $welcome-button-font-color;
-  font-size: 1.5 * $font-size;
+  font-size: $font-size;
   margin: $button-margin;
-  padding: 0 $welcome-button-horizontal-padding;
+  padding: $welcome-button-vertical-padding $welcome-button-horizontal-padding;
 }
