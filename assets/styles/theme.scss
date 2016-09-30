@@ -8,7 +8,7 @@ $navbar-font-color: shade($font-color, 30);
 $welcome-button-font-color: $white;
 
 $body-max-width: 650px;
-$main-image-width: 400px;
+$main-image-width: 250px;
 
 $body-vertical-margin: 100px;
 $button-margin: 20px;
@@ -26,6 +26,16 @@ body {
   text-align: center;
 }
 
+// .dropmenu {
+//   background-color: $nav-button-background-color;
+//   color: $font-color;
+//   opacity: .92;
+//   padding: 30px 10px 10px;
+//   position: fixed;
+//   text-align: left;
+//   z-index: 2;
+// }
+
 .main_image {
   margin: $main-image-margin;
   width: $main-image-width;
@@ -34,16 +44,18 @@ body {
 .main_title {
   color: tint($font-color, 25);
   font-family: $title-font-family;
-  font-size: 8 * $font-size;
+  font-size: 4.5 * $font-size;
 }
 
 .navbar {
   background-color: $navbar-background-color;
   color: $navbar-font-color;
+  margin: 0;
 }
 
 .nav_button_style {
   background-color: $nav-button-background-color;
+  font-size: 0.9 * $font-size;
 }
 
 .sign_in_button {
@@ -56,7 +68,7 @@ body {
 
 .welcome_button {
   color: $welcome-button-font-color;
-  font-size: 2 * $font-size;
+  font-size: 1.5 * $font-size;
   margin: $button-margin;
   padding: 0 $welcome-button-horizontal-padding;
 }

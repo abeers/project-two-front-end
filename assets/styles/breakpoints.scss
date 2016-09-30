@@ -1,0 +1,21 @@
+@import 'breakpoint';
+
+body {
+  @include breakpoint(tiny) {
+    max-width: 100%;
+  }
+}
+
+.main_image {
+  @include breakpoint(tiny) {
+    width: 200px;
+  }
+}
+
+.welcome_button {
+  @include breakpoint(tiny) {
+    font-size: 1 * $font-size;
+    padding: 10px .7 * $welcome-button-horizontal-padding;
+    margin: 0 .7 * $button-margin;
+  }
+}

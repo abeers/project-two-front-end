@@ -1,7 +1,7 @@
 'use strict';
 
 const setInitialView = () => {
-  $('body').children('*').hide();
+  // $('body').children('*').hide();
   $('#main-title').show();
   $('#main-image').show();
   $('.welcome-button').show();
