@@ -22,17 +22,48 @@ const onAddNewRecipe = function (event) {
   event.preventDefault();
   let form = event.target;
 
-  let data = getFormFields(form);
+  let rawData = getFormFields(form);
 
   let recipeData = {
-    recipe: data.recipe
+    recipe: rawData.recipe
   };
-  // let ingredientData = data.ingredient;
+  let ingredientData = {
+    ingredient: rawData.ingredient
+  };
+  let recipeingredientData = {
+    recipeingredient: rawData.recipeingredient
+  };
 
   recipeApi.addRecipe(recipeData)
-    .done(console.log("Added"))
+    .done(function (recipeResult) {
+      recipeingredientData.recipeingredient.recipe_id = recipeResult.recipe.id;
+      ingredientApi.addIngredient(ingredientData)
+        .done(function (ingredientResult) {
+          recipeingredientData.recipeingredient.ingredient_id = ingredientResult.ingredient.id;
+          api.addRecipeingredient(recipeingredientData)
+            .done(console.log('Success?'))
+            .fail(ui.failure);
+        })
+        .fail(ui.failure);
+      })
     .fail(ui.failure);
+
 };
+
+// const onSignUp = function (event) {
+//   event.preventDefault();
+//   let form = event.target;
+//
+//   let signUpData = getFormFields(form);
+//
+//   api.signUp(signUpData)
+//   .done(function (data, textStatus, jqXHR) {
+//     api.signIn(data, textStatus, jqXHR, signUpData)
+//       .done(ui.signInSuccess)
+//       .fail(ui.logInFailure);
+//   })
+//   .fail(ui.failure);
+// };
 
 const addHandlers = () => {
   $('#add-new-recipe').on('submit', onAddNewRecipe);
