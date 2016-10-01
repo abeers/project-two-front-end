@@ -7,16 +7,16 @@ const recipeApi = require('../recipes/api');
 const ingredientApi = require('../ingredients/api');
 const ui = require('./ui');
 
-const onAddRecipeingredient = function (event) {
-  event.preventDefault();
-  let form = event.target;
-
-  let data = getFormFields(form);
-
-  api.addRecipeingredient(data)
-    .done(ui.addRecipeingredientSuccess)
-    .fail(ui.failure);
-};
+// const onAddRecipeingredient = function (event) {
+//   event.preventDefault();
+//   let form = event.target;
+//
+//   let data = getFormFields(form);
+//
+//   api.addRecipeingredient(data)
+//     .done(ui.addRecipeingredientSuccess)
+//     .fail(ui.failure);
+// };
 
 const onAddNewRecipe = function (event) {
   event.preventDefault();
@@ -49,21 +49,6 @@ const onAddNewRecipe = function (event) {
     .fail(ui.failure);
 
 };
-
-// const onSignUp = function (event) {
-//   event.preventDefault();
-//   let form = event.target;
-//
-//   let signUpData = getFormFields(form);
-//
-//   api.signUp(signUpData)
-//   .done(function (data, textStatus, jqXHR) {
-//     api.signIn(data, textStatus, jqXHR, signUpData)
-//       .done(ui.signInSuccess)
-//       .fail(ui.logInFailure);
-//   })
-//   .fail(ui.failure);
-// };
 
 const addHandlers = () => {
   $('#add-new-recipe').on('submit', onAddNewRecipe);

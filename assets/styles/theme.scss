@@ -69,12 +69,20 @@ body {
   margin: $button-margin;
 }
 
+.recipe-listing {
+  text-align: left;
+}
+
 .sign_in_button {
   background-color: shade($welcome-button-background-color, 25);
 }
 
 .sign_up_button {
   background-color: tint($welcome-button-background-color, 25);
+}
+
+.time-listing {
+  float: right;
 }
 
 .welcome_button {

@@ -1,7 +1,9 @@
 'use strict';
 
-const indexRecipesSuccess = (data) => {
-  console.log(data);
+const recipeCardTemplate = require('../templates/recipe-listing.handlebars');
+
+const indexRecipesSuccess = (recipes) => {
+  $('#recipe-list').html(recipeCardTemplate(recipes));
 };
 
 const addRecipeSuccess = () => {
