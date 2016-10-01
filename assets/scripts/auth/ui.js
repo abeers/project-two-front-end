@@ -6,11 +6,12 @@ const viewStateUi = require('../viewstates/ui.js');
 const signInSuccess = (data) => {
   app.user = data.user;
   console.log(app.user);
-  viewStateUi.setSpinWheelView();
+  viewStateUi.setUserView();
 };
 
 const changePasswordSuccess = () => {
   console.log("Password successfully changed.");
+  viewStateUi.setUserView();
 };
 
 const signOutSuccess = () => {

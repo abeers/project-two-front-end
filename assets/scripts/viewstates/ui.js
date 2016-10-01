@@ -8,12 +8,13 @@ const setInitialView = () => {
   $('.welcome-button').show();
 };
 
-const setSpinWheelView = () => {
+const setUserView = () => {
   $('body').children('*').hide();
   $('nav').show();
+  $('.option-button').show();
 };
 
 module.exports = {
   setInitialView,
-  setSpinWheelView
+  setUserView
 };

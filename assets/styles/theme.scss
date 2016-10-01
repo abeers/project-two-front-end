@@ -1,6 +1,7 @@
 $background-color: $cream;
 $navbar-background-color: tint($buttercup, 10);
 $nav-button-background-color: $goldenorange;
+$option-button-color: $goldenbrown;
 $welcome-button-background-color: $bluegreen;
 
 $font-color: $charcoal;
@@ -59,6 +60,13 @@ body {
 .nav_button_style {
   background-color: $nav-button-background-color;
   font-size: .9 * $font-size;
+}
+
+.option_button {
+  background-color: $option-button-color;
+  display: block;
+  font-size: 1.2 * $font-size;
+  margin: $button-margin;
 }
 
 .sign_in_button {

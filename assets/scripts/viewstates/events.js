@@ -10,9 +10,21 @@ const onSignUpClick = () => {
   $('#sign-up').show();
 };
 
+const onChangePasswordClick = () => {
+  $('#change-password-button').hide();
+  $('#change-password').show();
+};
+
+const onAddRecipeClick = () => {
+  $('.option-button').hide();
+  $('#add-recipe').show();
+};
+
 const addHandlers = () => {
   $('#sign-in-button').on('click', onSignInClick);
   $('#sign-up-button').on('click', onSignUpClick);
+  $('#change-password-button').on('click', onChangePasswordClick);
+  $('#add-recipe-button').on('click', onAddRecipeClick);
 };
 
 module.exports = {
