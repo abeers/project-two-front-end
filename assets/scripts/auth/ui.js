@@ -15,7 +15,7 @@ const changePasswordSuccess = () => {
 
 const signOutSuccess = () => {
   app.user = null;
-  console.log("Sign out success.");
+  viewStateUi.setInitialView();
 };
 
 const failure = (error) => {
