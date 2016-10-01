@@ -17,7 +17,7 @@ const onChangePasswordClick = () => {
 
 const onAddRecipeClick = () => {
   $('.option-button').hide();
-  $('#add-recipe').show();
+  $('#add-new-recipe').show();
 };
 
 const addHandlers = () => {

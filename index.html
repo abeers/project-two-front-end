@@ -53,7 +53,7 @@
         Change Password
       </button>
       <!-- end user buttons -->
-      
+
       <!-- authentication forms -->
       <form id="sign-up">
         <fieldset>
@@ -121,16 +121,18 @@
         </fieldset>
       </form>
       <!-- end of ingredient forms -->
-      <!-- recipeingredient forms -->
-      <form id="add-recipeingredient">
+      <!-- combined forms -->
+      <form id="add-new-recipe">
         <fieldset>
-          <legend>Add a recipeingredient!</legend>
+          <legend>Add a recipe!</legend>
+          <input type="text" name="recipe[name]" placeholder="Name of Recipe">
+          <input type="number" name="recipe[time]" placeholder="Number of Minutes to Make">
+          <input type="text" name="ingredient[name]" placeholder="Name of Ingredient">
           <input type="number" name="recipeingredient[quantity]" placeholder="Quantity">
-          <input type="text" name="recipeingredient[recipe_id]" placeholder="ID of Recipe">
-          <input type="text" name="recipeingredient[ingredient_id]" placeholder="ID of Ingredient">
-          <input type="submit" name="submit" value="Add recipeingredient!">
+          <input type="text" name="ingredient[units]" placeholder="Units">
+          <input type="submit" name="submit" value="Add recipe!">
         </fieldset>
       </form>
-      <!-- end of recipeingredient forms -->
+      <!-- end of combined forms -->
     </body>
 </html>
