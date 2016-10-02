@@ -7,6 +7,8 @@ const recipeApi = require('../recipes/api');
 const ingredientApi = require('../ingredients/api');
 const ui = require('./ui');
 
+const app = require('../app');
+
 // const onAddRecipeingredient = function (event) {
 //   event.preventDefault();
 //   let form = event.target;
@@ -27,6 +29,8 @@ const onAddNewRecipe = function (event) {
   let recipeData = {
     recipe: rawData.recipe
   };
+  recipeData.recipe.user_id = app.user.id;
+
   let ingredientData = {
     ingredient: rawData.ingredient
   };

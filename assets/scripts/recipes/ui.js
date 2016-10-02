@@ -2,6 +2,7 @@
 
 const recipeCardTemplate = require('../templates/recipe-listing.handlebars');
 const ingredientListTemplate = require('../templates/ingredient-listing.handlebars');
+const instructionListTemplate = require('../templates/instruction-listing.handlebars');
 const viewState = require('../viewstates/ui.js');
 
 const indexRecipesSuccess = (recipes) => {
@@ -11,6 +12,7 @@ const indexRecipesSuccess = (recipes) => {
 const getListingSuccess = (recipe) => {
   console.log(recipe);
   $('#recipe-ingredient-list').html(ingredientListTemplate(recipe));
+  $('#recipe-instruction-list').html(instructionListTemplate(recipe));
   viewState.setRecipeIngredientsView();
 };
 
