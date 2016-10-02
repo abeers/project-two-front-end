@@ -13,6 +13,17 @@ const onIndexRecipes = function (event) {
     .fail(ui.failure);
 };
 
+const onSearchRecipes = function (event) {
+  event.preventDefault();
+  let form = event.target;
+
+  let data = getFormFields(form);
+
+  api.searchRecipes(data)
+    .done(ui.searchRecipesSuccess)
+    .fail(ui.failure);
+};
+
 const onAddRecipe = function (event) {
   event.preventDefault();
   let form = event.target;
@@ -45,6 +56,7 @@ const onGetListing = function (event) {
 
 const addHandlers = () => {
   $('#index-recipes').on('submit', onIndexRecipes);
+  $('#search-for-recipe').on('submit', onSearchRecipes);
   $('#add-recipe').on('submit', onAddRecipe);
   $('#update-recipe').on('submit', onUpdateRecipe);
   $('#recipe-list').on('click', '.recipe-listing', onGetListing);

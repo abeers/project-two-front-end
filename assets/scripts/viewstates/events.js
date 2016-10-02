@@ -28,6 +28,13 @@ const onFindRecipesClick = () => {
   $('#recipe-list').children('*').show();
 };
 
+const onSearchRecipesClick = () => {
+  $('.option-button').hide();
+  $('#search-for-recipe').show();
+  $('#recipe-list').show();
+  $('#recipe-list').children('*').show();
+};
+
 const onAddRecipeClick = () => {
   $('.option-button').hide();
   $('#add-new-recipe').show();
@@ -47,6 +54,7 @@ const addHandlers = () => {
   $('#home-button').on('click', onHomeClick);
   $('#change-password-button').on('click', onChangePasswordClick);
   $('#find-recipes-button').on('click', onFindRecipesClick);
+  $('#search-recipes-button').on('click', onSearchRecipesClick);
   $('#add-recipe-button').on('click', onAddRecipeClick);
   $('.recipe-tab').on('click', onTabClick);
 };

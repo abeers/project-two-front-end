@@ -17,6 +17,12 @@ const getListingSuccess = (recipe) => {
   viewState.setRecipeIngredientsView();
 };
 
+const searchRecipesSuccess = (recipes) => {
+  console.log(recipes);
+  $('#recipe-list').html(recipeCardTemplate(recipes));
+  
+};
+
 const addRecipeSuccess = () => {
   console.log("Recipe successfully added.");
 };
@@ -32,6 +38,7 @@ const failure = (error) => {
 module.exports = {
   indexRecipesSuccess,
   getListingSuccess,
+  searchRecipesSuccess,
   addRecipeSuccess,
   updateRecipeSuccess,
   failure

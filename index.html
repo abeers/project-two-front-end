@@ -45,6 +45,9 @@
       <button type="button" id='find-recipes-button' class="option-button option_button btn">
         Find Recipes
       </button>
+      <button type="button" id='search-recipes-button' class="option-button option_button btn">
+        Search for Recipe
+      </button>
       <button type="button" id='add-recipe-button' class="option-button option_button btn">
         Add Recipe
       </button>
@@ -130,6 +133,13 @@
           <input type="number" name="recipeingredient[quantity]" placeholder="Quantity">
           <input type="text" name="ingredient[units]" placeholder="Units">
           <input type="submit" name="submit" value="Add recipe!">
+        </fieldset>
+      </form>
+      <form id="search-for-recipe">
+        <fieldset>
+          <legend>Search for recipe!</legend>
+          <input type="text" name="recipe[name]" placeholder="Name of Recipe">
+          <input type="submit" name="submit" value="Search for recipe!">
         </fieldset>
       </form>
       <!-- end of combined forms -->
