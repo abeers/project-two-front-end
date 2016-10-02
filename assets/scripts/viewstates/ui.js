@@ -12,6 +12,7 @@ const setUserView = () => {
   $('body').children('*').hide();
   $('nav').show();
   $('.option-button').show();
+  $('#recipe-list').html('');
 };
 
 const setRecipeIngredientsView = () => {

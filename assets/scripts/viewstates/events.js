@@ -1,5 +1,7 @@
 'use strict';
 
+const ui = require('./ui');
+
 const onSignInClick = () => {
   $('.welcome-button').hide();
   $('#sign-in').show();
@@ -8,6 +10,10 @@ const onSignInClick = () => {
 const onSignUpClick = () => {
   $('.welcome-button').hide();
   $('#sign-up').show();
+};
+
+const onHomeClick = () => {
+  ui.setUserView();
 };
 
 const onChangePasswordClick = () => {
@@ -30,6 +36,7 @@ const onAddRecipeClick = () => {
 const addHandlers = () => {
   $('#sign-in-button').on('click', onSignInClick);
   $('#sign-up-button').on('click', onSignUpClick);
+  $('#home-button').on('click', onHomeClick);
   $('#change-password-button').on('click', onChangePasswordClick);
   $('#find-recipes-button').on('click', onFindRecipesClick);
   $('#add-recipe-button').on('click', onAddRecipeClick);
