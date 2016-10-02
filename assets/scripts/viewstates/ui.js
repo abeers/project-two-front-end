@@ -18,11 +18,11 @@ const setUserView = () => {
 const setRecipeIngredientsView = () => {
   $('body').children('*').hide();
   $('nav').show();
+  $('#recipe-title').show();
+  $('.tabs').show();
+  $('.tabs').children('*').show();
   $('#recipe-ingredient-list').show();
   $('#recipe-ingredient-list').children('*').show();
-
-  $('#recipe-instruction-list').show();
-  $('#recipe-instruction-list').children('*').show();
 };
 
 module.exports = {

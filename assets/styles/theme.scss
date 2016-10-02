@@ -3,6 +3,8 @@ $navbar-background-color: tint($buttercup, 10);
 $nav-button-background-color: $goldenorange;
 $option-button-color: $goldenbrown;
 $recipe-listing-background-color: $buttercup;
+$recipe-tab-background-color: $buttercup;
+$active-tab-background-color: $goldenorange;
 $welcome-button-background-color: $bluegreen;
 
 $font-color: $charcoal;
@@ -93,12 +95,32 @@ ul {
   width: 100%;
 }
 
+.recipe-title {
+  font-family: $title-font-family;
+  font-size: 3 * $font-size;
+}
+
+.recipe-tab {
+  background-color: $recipe-tab-background-color;
+  font-size: $font-size;
+  margin: 0;
+  width: 49%;
+}
+
+.recipe-tab.active {
+  background-color: $active-tab-background-color;
+}
+
 .sign_in_button {
   background-color: shade($welcome-button-background-color, 25);
 }
 
 .sign_up_button {
   background-color: tint($welcome-button-background-color, 25);
+}
+
+.tabs {
+  padding: 0;
 }
 
 .time-listing {

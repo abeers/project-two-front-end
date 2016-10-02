@@ -33,6 +33,14 @@ const onAddRecipeClick = () => {
   $('#add-new-recipe').show();
 };
 
+const onTabClick = (event) => {
+  let listToShow = $(event.target).data('list');
+  $('.active').removeClass('active');
+  $(event.target).addClass('active');
+  $('.recipe-part-list').hide();
+  $('#' + listToShow).show();
+};
+
 const addHandlers = () => {
   $('#sign-in-button').on('click', onSignInClick);
   $('#sign-up-button').on('click', onSignUpClick);
@@ -40,6 +48,7 @@ const addHandlers = () => {
   $('#change-password-button').on('click', onChangePasswordClick);
   $('#find-recipes-button').on('click', onFindRecipesClick);
   $('#add-recipe-button').on('click', onAddRecipeClick);
+  $('.recipe-tab').on('click', onTabClick);
 };
 
 module.exports = {

@@ -11,6 +11,7 @@ const indexRecipesSuccess = (recipes) => {
 
 const getListingSuccess = (recipe) => {
   console.log(recipe);
+  $('#recipe-title').html(recipe.recipe.name);
   $('#recipe-ingredient-list').html(ingredientListTemplate(recipe));
   $('#recipe-instruction-list').html(instructionListTemplate(recipe));
   viewState.setRecipeIngredientsView();

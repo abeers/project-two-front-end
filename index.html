@@ -31,7 +31,7 @@
       <!-- end navbar -->
 
       <h1 id="main-title" class="main_title">Potluck</h1>
-      
+
       <!-- welcome buttons -->
       <img id="main-image" class="main_image" alt="Pot of gold" src="pot_of_gold.png">
       <button type="button" id='sign-in-button' class="welcome-button welcome_button sign_in_button btn">
@@ -138,9 +138,15 @@
       <ul id='recipe-list' class='recipe-list'>
       </ul>
       <!-- end of recipe list -->
-      <ul id='recipe-ingredient-list'>
+      <h1 id='recipe-title' class='recipe-title'></h1>
+      <ul class='tabs'>
+        <li data-list='recipe-ingredient-list' class='recipe-tab btn active'>Ingredients</li>
+        <li data-list='recipe-instruction-list' class='recipe-tab btn'>Instructions</li>
       </ul>
-      <ul id='recipe-instruction-list'>
+
+      <ul id='recipe-ingredient-list' class='recipe-part-list'>
+      </ul>
+      <ul id='recipe-instruction-list' class='recipe-part-list'>
       </ul>
     </body>
 </html>
