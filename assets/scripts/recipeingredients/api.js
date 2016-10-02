@@ -6,9 +6,9 @@ const addRecipeingredient = (data) => {
   return $.ajax({
     url: app.host + '/recipeingredients',
     method: 'POST',
-    // headers: {
-    //   Authorization: 'Token token=' + app.user.token
-    // },
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
     data: data
   });
 };

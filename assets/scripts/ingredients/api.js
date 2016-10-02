@@ -6,9 +6,9 @@ const indexIngredients = () => {
   return $.ajax({
     url: app.host + '/ingredients',
     method: 'GET',
-    // headers: {
-    //   Authorization: 'Token token=' + app.user.token
-    // }
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
   });
 };
 
@@ -16,9 +16,9 @@ const addIngredient = (data) => {
   return $.ajax({
     url: app.host + '/ingredients',
     method: 'POST',
-    // headers: {
-    //   Authorization: 'Token token=' + app.user.token
-    // },
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
     data: data
   });
 };
