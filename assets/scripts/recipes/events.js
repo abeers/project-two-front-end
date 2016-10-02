@@ -35,10 +35,19 @@ const onUpdateRecipe = function (event) {
     .fail(ui.failure);
 };
 
+const onGetListing = function (event) {
+  event.preventDefault();
+  let recipeId = $(this).data('id');
+  api.getRecipe(recipeId)
+    .done(ui.getListingSuccess)
+    .fail(ui.failure);
+};
+
 const addHandlers = () => {
   $('#index-recipes').on('submit', onIndexRecipes);
   $('#add-recipe').on('submit', onAddRecipe);
   $('#update-recipe').on('submit', onUpdateRecipe);
+  $('#recipe-list').on('click', '.recipe-listing', onGetListing);
 };
 
 module.exports = {

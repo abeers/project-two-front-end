@@ -2,6 +2,7 @@ $background-color: $cream;
 $navbar-background-color: tint($buttercup, 10);
 $nav-button-background-color: $goldenorange;
 $option-button-color: $goldenbrown;
+$recipe-listing-background-color: $buttercup;
 $welcome-button-background-color: $bluegreen;
 
 $font-color: $charcoal;
@@ -28,6 +29,10 @@ body {
   text-align: center;
 }
 
+ul {
+  text-align: left;
+}
+
 // .dropmenu {
 //   background-color: $nav-button-background-color;
 //   color: $font-color;
@@ -37,6 +42,11 @@ body {
 //   text-align: left;
 //   z-index: 2;
 // }
+
+.ingredient-listing {
+  font-size: $font-size;
+  text-align: left;
+}
 
 .main_image {
   display: block;
@@ -69,8 +79,18 @@ body {
   margin: $button-margin;
 }
 
+.recipe-list {
+  list-style: none;
+  padding-left: 0;
+}
+
 .recipe-listing {
+  background-color: $recipe-listing-background-color;
+  font-size: 1.2 * $font-size;
+  margin: .5 * $button-margin 0;
+  padding: 15px;
   text-align: left;
+  width: 100%;
 }
 
 .sign_in_button {

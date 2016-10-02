@@ -12,6 +12,16 @@ const indexRecipes = () => {
   });
 };
 
+const getRecipe = (id) => {
+  return $.ajax({
+    url: app.host + '/recipes/' + id,
+    method: 'GET',
+    // headers: {
+    //   Authorization: 'Token token=' + app.user.token
+    // }
+  });
+};
+
 const addRecipe = (data) => {
   return $.ajax({
     url: app.host + '/recipes',
@@ -36,6 +46,7 @@ const updateRecipe = (data) => {
 
 module.exports = {
   indexRecipes,
+  getRecipe,
   addRecipe,
   updateRecipe
 };

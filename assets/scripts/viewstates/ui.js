@@ -14,7 +14,15 @@ const setUserView = () => {
   $('.option-button').show();
 };
 
+const setRecipeIngredientsView = () => {
+  $('body').children('*').hide();
+  $('nav').show();
+  $('#recipe-ingredient-list').show();
+  $('#recipe-ingredient-list').children('*').show();
+};
+
 module.exports = {
   setInitialView,
-  setUserView
+  setUserView,
+  setRecipeIngredientsView
 };
