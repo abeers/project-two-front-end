@@ -35,6 +35,13 @@ const onSearchRecipesClick = () => {
   $('#recipe-list').children('*').show();
 };
 
+const onMyRecipesClick = () => {
+  $('.option-button').hide();
+  $('#my-recipes').show();
+  $('#recipe-list').show();
+  $('#recipe-list').children('*').show();
+};
+
 const onAddRecipeClick = () => {
   $('.option-button').hide();
   $('#add-new-recipe').show();
@@ -55,6 +62,7 @@ const addHandlers = () => {
   $('#change-password-button').on('click', onChangePasswordClick);
   $('#find-recipes-button').on('click', onFindRecipesClick);
   $('#search-recipes-button').on('click', onSearchRecipesClick);
+  $('#my-recipes-button').on('click', onMyRecipesClick);
   $('#add-recipe-button').on('click', onAddRecipeClick);
   $('.recipe-tab').on('click', onTabClick);
 };

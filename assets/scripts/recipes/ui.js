@@ -20,7 +20,10 @@ const getListingSuccess = (recipe) => {
 const searchRecipesSuccess = (recipes) => {
   console.log(recipes);
   $('#recipe-list').html(recipeCardTemplate(recipes));
-  
+};
+
+const myRecipesSuccess = (recipes) => {
+  $('#recipe-list').html(recipeCardTemplate(recipes));
 };
 
 const addRecipeSuccess = () => {
@@ -39,6 +42,7 @@ module.exports = {
   indexRecipesSuccess,
   getListingSuccess,
   searchRecipesSuccess,
+  myRecipesSuccess,
   addRecipeSuccess,
   updateRecipeSuccess,
   failure
