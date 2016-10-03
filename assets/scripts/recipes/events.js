@@ -62,6 +62,15 @@ const onGetListing = function (event) {
     .fail(ui.failure);
 };
 
+const onDeleteClick = (event) => {
+  event.preventDefault();
+  // alert('Are you sure you want to delete this recipe?');
+  let recipeId = $(event.target).data('id');
+  api.deleteRecipe(recipeId)
+    .done(ui.deleteRecipeSuccess)
+    .fail(ui.failure);
+};
+
 const addHandlers = () => {
   $('#index-recipes').on('submit', onIndexRecipes);
   $('#search-for-recipe').on('submit', onSearchRecipes);
@@ -69,6 +78,8 @@ const addHandlers = () => {
   $('#add-recipe').on('submit', onAddRecipe);
   $('#update-recipe').on('submit', onUpdateRecipe);
   $('#recipe-list').on('click', '.recipe-listing', onGetListing);
+  $('#recipe-list').on('click', '.my-recipe-listing .recipe-name', onGetListing);
+  $('#recipe-list').on('click', '.my-recipe-listing .delete-button', onDeleteClick);
 };
 
 module.exports = {

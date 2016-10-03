@@ -1,6 +1,8 @@
 'use strict';
 
 const ui = require('./ui');
+const recipeApi = require('../recipes/api');
+const app = require('../app');
 
 const onSignInClick = () => {
   $('.welcome-button').hide();
@@ -55,6 +57,14 @@ const onTabClick = (event) => {
   $('#' + listToShow).show();
 };
 
+const onEditRecipeClick = (event) => {
+  let recipeId = $(event.target).data('id');
+  app.recipeId = recipeId;
+  recipeApi.getRecipe(recipeId)
+    .done(ui.setEditRecipeView)
+    .fail(ui.failure);
+};
+
 const addHandlers = () => {
   $('#sign-in-button').on('click', onSignInClick);
   $('#sign-up-button').on('click', onSignUpClick);
@@ -65,6 +75,7 @@ const addHandlers = () => {
   $('#my-recipes-button').on('click', onMyRecipesClick);
   $('#add-recipe-button').on('click', onAddRecipeClick);
   $('.recipe-tab').on('click', onTabClick);
+  $('#recipe-list').on('click', '.my-recipe-listing .edit-button', onEditRecipeClick);
 };
 
 module.exports = {
