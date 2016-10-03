@@ -20,22 +20,18 @@
     <body class="container-fluid">
       <!-- navbar -->
       <nav class="navbar navbar-fixed-top row">
-        <div id="menu-button" class="navbar-btn navbar-left nav-button btn">
-          Menu
+        <div id="home-button" class="nav_button_style navbar-btn navbar-left nav-button btn">
+          Home
         </div>
         <div id="sign-out-button" class="nav_button_style navbar-btn navbar-right nav-button btn">
           Sign Out
         </div>
         <p id="sign-in-name" class="navbar-text navbar-right col-xs-2"></p>
       </nav>
-      <!-- <ul id="dropmenu" class="nav nav-pills nav-stacked dropmenu">
-        <li role="presentation"><a href="#" id="change-password-button">Change password</a></li>
-        <li role="presentation"><a href="#" id="index-games-button">Get games played</a></li>
-        <li role="presentation"><a href="#" id="show-game-button">Get one game</a></li>
-        <li role="presentation"><a href="#" id="start-game-button">Start new game</a></li>
-      </ul> -->
       <!-- end navbar -->
+
       <h1 id="main-title" class="main_title">Potluck</h1>
+
       <!-- welcome buttons -->
       <img id="main-image" class="main_image" alt="Pot of gold" src="pot_of_gold.png">
       <button type="button" id='sign-in-button' class="welcome-button welcome_button sign_in_button btn">
@@ -45,6 +41,23 @@
         Sign Up
       </button>
       <!-- end welcome buttons -->
+      <!-- user buttons -->
+      <button type="button" id='find-recipes-button' class="option-button option_button btn">
+        Find Recipes
+      </button>
+      <button type="button" id='search-recipes-button' class="option-button option_button btn">
+        Search for Recipe
+      </button>
+      <button type="button" id='my-recipes-button' class="option-button option_button btn">
+        My Recipes
+      </button>
+      <button type="button" id='add-recipe-button' class="option-button option_button btn">
+        Add Recipe
+      </button>
+      <button type="button" id='change-password-button' class="option-button option_button btn">
+        Change Password
+      </button>
+      <!-- end user buttons -->
 
       <!-- authentication forms -->
       <form id="sign-up">
@@ -72,18 +85,18 @@
           <input type="submit" name="submit" value="Change password">
         </fieldset>
       </form>
-      <form id="sign-out">
-        <fieldset>
-          <legend>Sign out</legend>
-          <input type="submit" name="submit" value="Sign out">
-        </fieldset>
-      </form>
       <!-- end of authentication forms -->
       <!-- recipe forms -->
       <form id="index-recipes">
         <fieldset>
           <legend>Get all recipes!</legend>
           <input type="submit" name="submit" value="Get all recipes!">
+        </fieldset>
+      </form>
+      <form id="my-recipes">
+        <fieldset>
+          <legend>Get my recipes!</legend>
+          <input type="submit" name="submit" value="Get my recipes!">
         </fieldset>
       </form>
       <form id="add-recipe">
@@ -119,16 +132,41 @@
         </fieldset>
       </form>
       <!-- end of ingredient forms -->
-      <!-- recipeingredient forms -->
-      <form id="add-recipeingredient">
+      <!-- combined forms -->
+      <form id="add-new-recipe">
         <fieldset>
-          <legend>Add a recipeingredient!</legend>
+          <legend>Add a recipe!</legend>
+          <input type="text" name="recipe[name]" placeholder="Name of Recipe">
+          <input type="number" name="recipe[time]" placeholder="Number of Minutes to Make">
+          <input type="text" name="ingredient[name]" placeholder="Name of Ingredient">
           <input type="number" name="recipeingredient[quantity]" placeholder="Quantity">
-          <input type="text" name="recipeingredient[recipe_id]" placeholder="ID of Recipe">
-          <input type="text" name="recipeingredient[ingredient_id]" placeholder="ID of Ingredient">
-          <input type="submit" name="submit" value="Add recipeingredient!">
+          <input type="text" name="ingredient[units]" placeholder="Units">
+          <input type="text" name="instruction[step]" placeholder="Instruction">
+          <input type="submit" name="submit" value="Add recipe!">
         </fieldset>
       </form>
-      <!-- end of recipeingredient forms -->
+      <form id="search-for-recipe">
+        <fieldset>
+          <legend>Search for recipe!</legend>
+          <input type="text" name="recipe[name]" placeholder="Name of Recipe">
+          <input type="submit" name="submit" value="Search for recipe!">
+        </fieldset>
+      </form>
+      <!-- end of combined forms -->
+
+      <!-- recipe list -->
+      <ul id='recipe-list' class='recipe-list'>
+      </ul>
+      <!-- end of recipe list -->
+      <h1 id='recipe-title' class='recipe-title'></h1>
+      <ul class='tabs'>
+        <li data-list='recipe-ingredient-list' class='recipe-tab btn active'>Ingredients</li>
+        <li data-list='recipe-instruction-list' class='recipe-tab btn'>Instructions</li>
+      </ul>
+
+      <ul id='recipe-ingredient-list' class='recipe-part-list'>
+      </ul>
+      <ul id='recipe-instruction-list' class='recipe-part-list'>
+      </ul>
     </body>
 </html>

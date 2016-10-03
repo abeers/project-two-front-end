@@ -1,7 +1,29 @@
 'use strict';
 
-const indexRecipesSuccess = (data) => {
-  console.log(data);
+const recipeCardTemplate = require('../templates/recipe-listing.handlebars');
+const ingredientListTemplate = require('../templates/ingredient-listing.handlebars');
+const instructionListTemplate = require('../templates/instruction-listing.handlebars');
+const viewState = require('../viewstates/ui.js');
+
+const indexRecipesSuccess = (recipes) => {
+  $('#recipe-list').html(recipeCardTemplate(recipes));
+};
+
+const getListingSuccess = (recipe) => {
+  console.log(recipe);
+  $('#recipe-title').html(recipe.recipe.name);
+  $('#recipe-ingredient-list').html(ingredientListTemplate(recipe));
+  $('#recipe-instruction-list').html(instructionListTemplate(recipe));
+  viewState.setRecipeIngredientsView();
+};
+
+const searchRecipesSuccess = (recipes) => {
+  console.log(recipes);
+  $('#recipe-list').html(recipeCardTemplate(recipes));
+};
+
+const myRecipesSuccess = (recipes) => {
+  $('#recipe-list').html(recipeCardTemplate(recipes));
 };
 
 const addRecipeSuccess = () => {
@@ -18,6 +40,9 @@ const failure = (error) => {
 
 module.exports = {
   indexRecipesSuccess,
+  getListingSuccess,
+  searchRecipesSuccess,
+  myRecipesSuccess,
   addRecipeSuccess,
   updateRecipeSuccess,
   failure
