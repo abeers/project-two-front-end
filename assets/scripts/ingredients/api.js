@@ -12,6 +12,17 @@ const indexIngredients = () => {
   });
 };
 
+const searchIngredient = (data) => {
+  return $.ajax({
+    url: app.host + '/ingredient',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: data
+  });
+};
+
 const addIngredient = (data) => {
   return $.ajax({
     url: app.host + '/ingredients',
@@ -25,5 +36,6 @@ const addIngredient = (data) => {
 
 module.exports = {
   indexIngredients,
+  searchIngredient,
   addIngredient
 };
