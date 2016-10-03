@@ -56,7 +56,7 @@ const addRecipe = (data) => {
 
 const updateRecipe = (data) => {
   return $.ajax({
-    url: app.host + '/recipes/1',
+    url: app.host + '/recipes/' + app.recipeId,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token

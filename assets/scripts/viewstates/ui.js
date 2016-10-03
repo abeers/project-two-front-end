@@ -24,8 +24,16 @@ const setRecipeIngredientsView = () => {
   $('#recipe-ingredient-list').children('*').show();
 };
 
+const setEditRecipeView = (recipeData) => {
+  $('body').children('*').hide();
+  $('nav').show();
+  $('#update-recipe').show();
+  $('#update-recipe').children('*').show();
+};
+
 module.exports = {
   setInitialView,
   setUserView,
-  setRecipeIngredientsView
+  setRecipeIngredientsView,
+  setEditRecipeView
 };
