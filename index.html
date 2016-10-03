@@ -138,10 +138,25 @@
           <legend>Add a recipe!</legend>
           <input type="text" name="recipe[name]" placeholder="Name of Recipe">
           <input type="number" name="recipe[time]" placeholder="Number of Minutes to Make">
-          <input type="text" name="ingredient[name]" placeholder="Name of Ingredient">
-          <input type="number" name="recipeingredient[quantity]" placeholder="Quantity">
-          <input type="text" name="ingredient[units]" placeholder="Units">
-          <input type="text" name="instruction[step]" placeholder="Instruction">
+          <form>
+          </form>
+          <form class='ingredient-form'>
+            <input type="text" name="ingredient[name]" placeholder="Name of Ingredient">
+            <input type="number" name="recipeingredient[quantity]" placeholder="Quantity">
+            <input type="text" name="ingredient[units]" placeholder="Units">
+          </form>
+          <form class='ingredient-form'>
+            <input type="text" name="ingredient[name]" placeholder="Name of Ingredient">
+            <input type="number" name="recipeingredient[quantity]" placeholder="Quantity">
+            <input type="text" name="ingredient[units]" placeholder="Units">
+          </form>
+          <form class='instruction-form'>
+            <input type="text" name="instruction[step]" placeholder="Instruction">
+          </form>
+          <form class='instruction-form'>
+            <input type="text" name="instruction[step]" placeholder="Instruction">
+          </form>
+
           <input type="submit" name="submit" value="Add recipe!">
         </fieldset>
       </form>

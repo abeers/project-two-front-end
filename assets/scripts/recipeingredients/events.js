@@ -28,35 +28,61 @@ const onAddNewRecipe = function (event) {
     recipe: rawData.recipe
   };
 
-  let ingredientData = {
-    ingredient: rawData.ingredient
-  };
+  let ingredientForms = $('.ingredient-form');
 
-  let recipeingredientData = {
-    recipeingredient: rawData.recipeingredient
-  };
+  // let ingredientData = {
+  //   ingredient: rawData.ingredient
+  // };
+  //
+  // let recipeingredientData = {
+  //   recipeingredient: rawData.recipeingredient
+  // };
+  // console.log(ingredientForms);
+  // for (let i = 0; i < ingredientForms.length; i++) {
+  //   let rawIngredientData = getFormFields(ingredientForms[i]);
+  //   console.log(rawIngredientData);
+  //   let ingredientData = {
+  //     ingredient: rawIngredientData.ingredient
+  //   };
+  //   let recipeingredientData = {
+  //     recipeingredient: rawIngredientData.recipeingredient
+  //   };
+  //
+  //   console.log(ingredientData);
+  //   console.log(recipeingredientData);
+  // }
 
-  let instructionData = {
-    instruction: rawData.instruction
-  };
+  let instructionForms = $('.instruction-form');
 
   recipeApi.addRecipe(recipeData)
     .done(function (recipeResult) {
-      recipeingredientData.recipeingredient.recipe_id = recipeResult.recipe.id;
-      ingredientApi.searchIngredient(ingredientData)
-        .done(function (ingredientResult) {
-          recipeingredientData.recipeingredient.ingredient_id = ingredientResult.ingredient.id;
-          api.addRecipeingredient(recipeingredientData)
-            .done(function () {
-              instructionData.instruction.recipe_id = recipeResult.recipe.id;
-              api.addInstruction(instructionData)
-                .done(console.log('Success!'))
-                .fail(ui.failure);
-            })
-            .fail(ui.failure);
-        })
-        .fail(ui.failure);
+      for (let i = 0; i < ingredientForms.length; i++) {
+        let rawIngredientData = getFormFields(ingredientForms[i]);
+        let ingredientData = {
+          ingredient: rawIngredientData.ingredient
+        };
+        let recipeingredientData = {
+          recipeingredient: rawIngredientData.recipeingredient
+        };
+        ingredientApi.searchIngredient(ingredientData)
+          .done(function (ingredientResult) {
+            recipeingredientData.recipeingredient.recipe_id = recipeResult.recipe.id;
+            recipeingredientData.recipeingredient.ingredient_id = ingredientResult.ingredient.id;
+            api.addRecipeingredient(recipeingredientData)
+              .done()
+              .fail(ui.failure);
+          })
+          .fail(ui.failure);
+        }
+      for (let i = 0; i < instructionForms.length; i++) {
+        let instructionData = getFormFields(instructionForms[i]);
+        instructionData.instruction.recipe_id = recipeResult.recipe.id;
+        api.addInstruction(instructionData)
+          .done(console.log('Success!'))
+          .fail(ui.failure);
+        }
       })
+
     .fail(ui.failure);
 
 };
