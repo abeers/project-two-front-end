@@ -63,6 +63,15 @@ ul {
   font-size: 4.5 * $font-size;
 }
 
+.modify_button {
+  background-color: $bluegreen;
+  color: $white;
+  float: right;
+  font-size: .8 * $font-size;
+  margin: 0 3px;
+  padding: 5px 10px;
+}
+
 .navbar {
   background-color: $navbar-background-color;
   color: $navbar-font-color;
@@ -86,7 +95,7 @@ ul {
   padding-left: 0;
 }
 
-.recipe-listing {
+.recipe_listing {
   background-color: $recipe-listing-background-color;
   font-size: 1.2 * $font-size;
   margin: .5 * $button-margin 0;

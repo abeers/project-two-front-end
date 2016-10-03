@@ -65,11 +65,22 @@ const updateRecipe = (data) => {
   });
 };
 
+const deleteRecipe = (recipeId) => {
+  return $.ajax({
+    url: app.host + '/recipes/' + recipeId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  });
+};
+
 module.exports = {
   indexRecipes,
   getRecipe,
   searchRecipes,
   myRecipes,
   addRecipe,
-  updateRecipe
+  updateRecipe,
+  deleteRecipe
 };

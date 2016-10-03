@@ -1,6 +1,7 @@
 'use strict';
 
 const recipeCardTemplate = require('../templates/recipe-listing.handlebars');
+const myRecipeCardTemplate = require('../templates/my-recipe-listing.handlebars');
 const ingredientListTemplate = require('../templates/ingredient-listing.handlebars');
 const instructionListTemplate = require('../templates/instruction-listing.handlebars');
 const viewState = require('../viewstates/ui.js');
@@ -23,7 +24,7 @@ const searchRecipesSuccess = (recipes) => {
 };
 
 const myRecipesSuccess = (recipes) => {
-  $('#recipe-list').html(recipeCardTemplate(recipes));
+  $('#recipe-list').html(myRecipeCardTemplate(recipes));
 };
 
 const addRecipeSuccess = () => {
@@ -32,6 +33,10 @@ const addRecipeSuccess = () => {
 
 const updateRecipeSuccess = () => {
   console.log("Recipe successfully updated.");
+};
+
+const deleteRecipeSuccess = () => {
+  console.log("Recipe successfully deleted.");
 };
 
 const failure = (error) => {
@@ -45,5 +50,6 @@ module.exports = {
   myRecipesSuccess,
   addRecipeSuccess,
   updateRecipeSuccess,
+  deleteRecipeSuccess,
   failure
 };
