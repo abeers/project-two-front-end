@@ -7,6 +7,9 @@ const instructionListTemplate = require('../templates/instruction-listing.handle
 const viewState = require('../viewstates/ui.js');
 
 const indexRecipesSuccess = (recipes) => {
+  $('.option-button').hide();
+  $('#recipe-list').show();
+  $('#recipe-list').children('*').show();
   $('#recipe-list').html(recipeCardTemplate(recipes));
 };
 
@@ -25,8 +28,7 @@ const searchRecipesSuccess = (recipes) => {
 
 const myRecipesSuccess = (recipes) => {
   $('.option-button').hide();
-  $('#update-recipe').hide();
-  $('#my-recipes').show();
+  // $('#my-recipes').show();
   $('#recipe-list').show();
   $('#recipe-list').children('*').show();
   $('#recipe-list').html(myRecipeCardTemplate(recipes));

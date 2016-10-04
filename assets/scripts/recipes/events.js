@@ -80,9 +80,9 @@ const onDeleteClick = (event) => {
 };
 
 const addHandlers = () => {
-  $('#index-recipes').on('submit', onIndexRecipes);
+  $('#find-recipes-button').on('click', onIndexRecipes);
   $('#search-for-recipe').on('submit', onSearchRecipes);
-  $('#my-recipes').on('submit', onMyRecipes);
+  $('#my-recipes-button').on('click', onMyRecipes);
   $('#add-recipe').on('submit', onAddRecipe);
   $('#update-recipe').on('submit', onUpdateRecipe);
   $('#recipe-list').on('click', '.recipe-listing', onGetListing);
@@ -91,5 +91,6 @@ const addHandlers = () => {
 };
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onMyRecipes
 };
