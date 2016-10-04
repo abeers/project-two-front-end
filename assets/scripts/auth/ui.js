@@ -19,6 +19,11 @@ const signOutSuccess = () => {
   viewStateUi.setInitialView();
 };
 
+const signInFailure = () => {
+  $('#sign-in-error').html('Please try again');
+  $('#sign-in-error').show();
+};
+
 const failure = (error) => {
   console.error(error);
 };
@@ -27,5 +32,6 @@ module.exports = {
   signInSuccess,
   changePasswordSuccess,
   signOutSuccess,
+  signInFailure,
   failure
 };

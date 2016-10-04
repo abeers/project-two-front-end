@@ -29,7 +29,6 @@ const indexRecipesSuccess = (recipes) => {
 };
 
 const getListingSuccess = (recipe) => {
-  console.log(recipe);
   $('#recipe-title').html(recipe.recipe.name);
   sortInstructions(recipe.recipe);
   $('#recipe-ingredient-list').html(ingredientListTemplate(recipe));
@@ -43,17 +42,18 @@ const searchRecipesSuccess = (recipes) => {
 
 const myRecipesSuccess = (recipes) => {
   $('.option-button').hide();
+  $('#update-recipe').hide();
   $('#recipe-list').show();
   $('#recipe-list').children('*').show();
   $('#recipe-list').html(myRecipeCardTemplate(recipes));
 };
 
 const updateRecipeSuccess = () => {
-  console.log("Recipe successfully updated.");
+  // console.log("Recipe successfully updated.");
 };
 
 const deleteRecipeSuccess = () => {
-  console.log("Recipe successfully deleted.");
+  // console.log("Recipe successfully deleted.");
 };
 
 const recipeRouletteSuccess = (recipes) => {
