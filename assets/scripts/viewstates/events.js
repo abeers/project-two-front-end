@@ -45,12 +45,14 @@ const onMyRecipesClick = () => {
 };
 
 const onAddRecipeClick = () => {
+  app.formMode = 'instruction';
   app.ingredientCount = 1;
   app.instructionCount = 1;
   $('.field-button').show();
   $('.option-button').hide();
   $('#add-new-recipe').show();
   ui.showNumberOfIngredients(app.ingredientCount);
+  ui.showNumberOfInstructions(app.instructionCount);
 };
 
 const onTabClick = (event) => {
@@ -69,18 +71,32 @@ const onEditRecipeClick = (event) => {
     .fail(ui.failure);
 };
 
-const onAddIngredientField = () => {
-  $('#ingredient-forms').html('');
-  app.ingredientCount++;
-  ui.showNumberOfIngredients(app.ingredientCount);
+const onAddField = () => {
+  if (app.formMode === 'ingredient') {
+    $('#ingredient-forms').html('');
+    app.ingredientCount++;
+    ui.showNumberOfIngredients(app.ingredientCount);
+  } else if (app.formMode === 'instruction') {
+    $('#instruction-forms').html('');
+    app.instructionCount++;
+    ui.showNumberOfInstructions(app.instructionCount);
+  }
 };
 
-const onRemoveIngredientField = () => {
-  $('#ingredient-forms').html('');
-  if(app.ingredientCount > 1) {
-    app.ingredientCount--;
+const onRemoveField = () => {
+  if(app.formMode === 'ingredient') {
+    $('#ingredient-forms').html('');
+    if (app.ingredientCount > 1) {
+      app.ingredientCount--;
+    }
+    ui.showNumberOfIngredients(app.ingredientCount);
+  } else if (app.formMode === 'instruction') {
+    $('#instruction-forms').html('');
+    if (app.instructionCount > 1) {
+      app.instructionCount--;
+    }
+    ui.showNumberOfInstructions(app.instructionCount);
   }
-  ui.showNumberOfIngredients(app.ingredientCount);
 };
 
 const addHandlers = () => {
@@ -94,8 +110,8 @@ const addHandlers = () => {
   $('#add-recipe-button').on('click', onAddRecipeClick);
   $('.recipe-tab').on('click', onTabClick);
   $('#recipe-list').on('click', '.my-recipe-listing .edit-button', onEditRecipeClick);
-  $('#add-ingredient-field-button').on('click', onAddIngredientField);
-  $('#remove-ingredient-field-button').on('click', onRemoveIngredientField);
+  $('#add-field-button').on('click', onAddField);
+  $('#remove-field-button').on('click', onRemoveField);
 };
 
 module.exports = {
