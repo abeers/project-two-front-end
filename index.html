@@ -62,7 +62,6 @@
       <!-- authentication forms -->
       <form id="sign-up">
         <fieldset>
-          <legend>Sign up!</legend>
           <input type="email" name="credentials[email]" placeholder="Email">
           <input type="password" name="credentials[password]" placeholder="New password">
           <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
@@ -71,7 +70,6 @@
       </form>
       <form id="sign-in">
         <fieldset>
-          <legend>Sign in!</legend>
           <input type="email" name="credentials[email]" placeholder="Email">
           <input type="password" name="credentials[password]" placeholder="Password">
           <input type="submit" name="submit" value="Sign in!">
@@ -79,10 +77,9 @@
       </form>
       <form id="change-password">
         <fieldset>
-          <legend>Change password</legend>
           <input type="password" name="passwords[old]" placeholder="Old password">
           <input type="password" name="passwords[new]" placeholder="New password">
-          <input type="submit" name="submit" value="Change password">
+          <input type="submit" name="submit" value="Change">
         </fieldset>
       </form>
       <!-- end of authentication forms -->
@@ -137,15 +134,18 @@
         <fieldset>
           <legend>Add a recipe!</legend>
           <input type="text" name="recipe[name]" placeholder="Name of Recipe">
-          <input type="number" name="recipe[time]" placeholder="Number of Minutes to Make">
+          <input type="number" name="recipe[time]" placeholder="Min.">
           <form>
           </form>
+          <br>
           <button type="button" id='add-field-button' class="field-button btn">
             +
           </button>
           <button type="button" id='remove-field-button' class="field-button btn">
             -
           </button>
+          <br>
+          <br>
           <ul class='tabs'>
             <li data-form='ingredient-forms' data-mode='ingredient' class='form-tab btn active'>Ingredients</li>
             <li data-form='instruction-forms' data-mode='instruction' class='form-tab btn'>Instructions</li>
@@ -154,14 +154,13 @@
           </div>
           <div id="instruction-forms" class="recipe-part-forms">
           </div>
-          <input type="submit" name="submit" value="Add recipe!">
+          <input type="submit" name="submit" value="Add recipe">
         </fieldset>
       </form>
       <form id="search-for-recipe">
         <fieldset>
-          <legend>Search for recipe!</legend>
           <input type="text" name="recipe[name]" placeholder="Name of Recipe">
-          <input type="submit" name="submit" value="Search for recipe!">
+          <input type="submit" name="submit" value="Search">
         </fieldset>
       </form>
       <!-- end of combined forms -->

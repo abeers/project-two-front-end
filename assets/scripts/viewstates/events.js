@@ -19,7 +19,7 @@ const onHomeClick = () => {
 };
 
 const onChangePasswordClick = () => {
-  $('#change-password-button').hide();
+  $('.option-button').hide();
   $('#change-password').show();
 };
 
