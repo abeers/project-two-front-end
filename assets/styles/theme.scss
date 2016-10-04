@@ -169,6 +169,15 @@ input[name='submit'] {
   background-color: tint($welcome-button-background-color, 25);
 }
 
+.spin-button {
+  background-color: tint($charcoal, 25);
+  border: 5px solid $buttercup;
+  color: $buttercup;
+  font-family: $title-font-family;
+  font-size: 2.5 * $font-size;
+  padding: 10px 20px;
+}
+
 .tabs {
   padding: 0;
 }

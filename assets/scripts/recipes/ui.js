@@ -26,14 +26,9 @@ const searchRecipesSuccess = (recipes) => {
 
 const myRecipesSuccess = (recipes) => {
   $('.option-button').hide();
-  // $('#my-recipes').show();
   $('#recipe-list').show();
   $('#recipe-list').children('*').show();
   $('#recipe-list').html(myRecipeCardTemplate(recipes));
-};
-
-const addRecipeSuccess = () => {
-  console.log("Recipe successfully added.");
 };
 
 const updateRecipeSuccess = () => {
@@ -58,7 +53,6 @@ module.exports = {
   getListingSuccess,
   searchRecipesSuccess,
   myRecipesSuccess,
-  addRecipeSuccess,
   updateRecipeSuccess,
   deleteRecipeSuccess,
   recipeRouletteSuccess,
