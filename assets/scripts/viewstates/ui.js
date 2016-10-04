@@ -1,5 +1,7 @@
 'use strict';
 
+const ingredientFormTemplate = require('../templates/ingredient-form.handlebars');
+
 const setInitialView = () => {
   $('body').children('*').hide();
   $('#main-title').show();
@@ -31,9 +33,16 @@ const setEditRecipeView = (recipeData) => {
   $('#update-recipe').children('*').show();
 };
 
+const showNumberOfIngredients = (count) => {
+  for (let i = 0; i < count; i++) {
+    $('#ingredient-forms').append(ingredientFormTemplate());
+  }
+};
+
 module.exports = {
   setInitialView,
   setUserView,
   setRecipeIngredientsView,
-  setEditRecipeView
+  setEditRecipeView,
+  showNumberOfIngredients
 };

@@ -45,8 +45,12 @@ const onMyRecipesClick = () => {
 };
 
 const onAddRecipeClick = () => {
+  app.ingredientCount = 1;
+  app.instructionCount = 1;
+  $('.field-button').show();
   $('.option-button').hide();
   $('#add-new-recipe').show();
+  ui.showNumberOfIngredients(app.ingredientCount);
 };
 
 const onTabClick = (event) => {
@@ -65,6 +69,20 @@ const onEditRecipeClick = (event) => {
     .fail(ui.failure);
 };
 
+const onAddIngredientField = () => {
+  $('#ingredient-forms').html('');
+  app.ingredientCount++;
+  ui.showNumberOfIngredients(app.ingredientCount);
+};
+
+const onRemoveIngredientField = () => {
+  $('#ingredient-forms').html('');
+  if(app.ingredientCount > 1) {
+    app.ingredientCount--;
+  }
+  ui.showNumberOfIngredients(app.ingredientCount);
+};
+
 const addHandlers = () => {
   $('#sign-in-button').on('click', onSignInClick);
   $('#sign-up-button').on('click', onSignUpClick);
@@ -76,6 +94,8 @@ const addHandlers = () => {
   $('#add-recipe-button').on('click', onAddRecipeClick);
   $('.recipe-tab').on('click', onTabClick);
   $('#recipe-list').on('click', '.my-recipe-listing .edit-button', onEditRecipeClick);
+  $('#add-ingredient-field-button').on('click', onAddIngredientField);
+  $('#remove-ingredient-field-button').on('click', onRemoveIngredientField);
 };
 
 module.exports = {

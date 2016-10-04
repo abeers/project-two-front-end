@@ -140,23 +140,32 @@
           <input type="number" name="recipe[time]" placeholder="Number of Minutes to Make">
           <form>
           </form>
-          <form class='ingredient-form'>
-            <input type="text" name="ingredient[name]" placeholder="Name of Ingredient">
-            <input type="number" name="recipeingredient[quantity]" placeholder="Quantity">
-            <input type="text" name="ingredient[units]" placeholder="Units">
-          </form>
-          <form class='ingredient-form'>
-            <input type="text" name="ingredient[name]" placeholder="Name of Ingredient">
-            <input type="number" name="recipeingredient[quantity]" placeholder="Quantity">
-            <input type="text" name="ingredient[units]" placeholder="Units">
-          </form>
-          <form class='instruction-form'>
-            <input type="text" name="instruction[step]" placeholder="Instruction">
-          </form>
-          <form class='instruction-form'>
-            <input type="text" name="instruction[step]" placeholder="Instruction">
-          </form>
-
+          <button type="button" id='add-ingredient-field-button' class="field-button btn">
+            +
+          </button>
+          <button type="button" id='remove-ingredient-field-button' class="field-button btn">
+            -
+          </button>
+          <div id=ingredient-forms>
+            <!-- <form class='ingredient-form'>
+              <input type="text" name="ingredient[name]" placeholder="Name of Ingredient">
+              <input type="number" name="recipeingredient[quantity]" placeholder="Quantity">
+              <input type="text" name="ingredient[units]" placeholder="Units">
+            </form>
+            <form class='ingredient-form'>
+              <input type="text" name="ingredient[name]" placeholder="Name of Ingredient">
+              <input type="number" name="recipeingredient[quantity]" placeholder="Quantity">
+              <input type="text" name="ingredient[units]" placeholder="Units">
+            </form> -->
+          </div>
+          <div id=instruction-forms>
+            <!-- <form class='instruction-form'>
+              <input type="text" name="instruction[step]" placeholder="Instruction">
+            </form>
+            <form class='instruction-form'>
+              <input type="text" name="instruction[step]" placeholder="Instruction">
+            </form> -->
+          </div>
           <input type="submit" name="submit" value="Add recipe!">
         </fieldset>
       </form>

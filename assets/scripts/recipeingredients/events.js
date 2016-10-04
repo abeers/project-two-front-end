@@ -30,28 +30,6 @@ const onAddNewRecipe = function (event) {
 
   let ingredientForms = $('.ingredient-form');
 
-  // let ingredientData = {
-  //   ingredient: rawData.ingredient
-  // };
-  //
-  // let recipeingredientData = {
-  //   recipeingredient: rawData.recipeingredient
-  // };
-  // console.log(ingredientForms);
-  // for (let i = 0; i < ingredientForms.length; i++) {
-  //   let rawIngredientData = getFormFields(ingredientForms[i]);
-  //   console.log(rawIngredientData);
-  //   let ingredientData = {
-  //     ingredient: rawIngredientData.ingredient
-  //   };
-  //   let recipeingredientData = {
-  //     recipeingredient: rawIngredientData.recipeingredient
-  //   };
-  //
-  //   console.log(ingredientData);
-  //   console.log(recipeingredientData);
-  // }
-
   let instructionForms = $('.instruction-form');
 
   recipeApi.addRecipe(recipeData)

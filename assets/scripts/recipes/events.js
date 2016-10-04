@@ -50,7 +50,11 @@ const onUpdateRecipe = function (event) {
   let data = getFormFields(form);
 
   api.updateRecipe(data)
-    .done(ui.updateRecipeSuccess)
+    .done(function () {
+      api.myRecipes()
+        .done(ui.myRecipesSuccess)
+        .fail(ui.failure);
+    })
     .fail(ui.failure);
 };
 
@@ -67,7 +71,11 @@ const onDeleteClick = (event) => {
   // alert('Are you sure you want to delete this recipe?');
   let recipeId = $(event.target).data('id');
   api.deleteRecipe(recipeId)
-    .done(ui.deleteRecipeSuccess)
+    .done(function () {
+      api.myRecipes()
+        .done(ui.myRecipesSuccess)
+        .fail(ui.failure);
+    })
     .fail(ui.failure);
 };
 

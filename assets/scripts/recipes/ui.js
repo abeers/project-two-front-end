@@ -24,6 +24,11 @@ const searchRecipesSuccess = (recipes) => {
 };
 
 const myRecipesSuccess = (recipes) => {
+  $('.option-button').hide();
+  $('#update-recipe').hide();
+  $('#my-recipes').show();
+  $('#recipe-list').show();
+  $('#recipe-list').children('*').show();
   $('#recipe-list').html(myRecipeCardTemplate(recipes));
 };
 
