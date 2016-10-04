@@ -35,14 +35,30 @@ const setEditRecipeView = (recipeData) => {
 };
 
 const showNumberOfIngredients = (count) => {
+  // $('#ingredient-forms').html('');
   for (let i = 0; i < count; i++) {
     $('#ingredient-forms').append(ingredientFormTemplate());
   }
 };
 
 const showNumberOfInstructions = (count) => {
+  // $('#instruction-forms').html('');
   for (let i = 0; i < count; i++) {
     $('#instruction-forms').append(instructionFormTemplate());
+  }
+};
+
+const removeIngredient = () => {
+  let ingredients = $('.ingredient-form');
+  if (ingredients.length > 1) {
+    ingredients.last().remove();
+  }
+};
+
+const removeInstruction = () => {
+  let instructions = $('.instruction-form');
+  if (instructions.length > 1) {
+    instructions.last().remove();
   }
 };
 
@@ -52,5 +68,7 @@ module.exports = {
   setRecipeIngredientsView,
   setEditRecipeView,
   showNumberOfIngredients,
-  showNumberOfInstructions
+  showNumberOfInstructions,
+  removeIngredient,
+  removeInstruction
 };

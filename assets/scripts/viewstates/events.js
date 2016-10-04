@@ -45,17 +45,28 @@ const onMyRecipesClick = () => {
 };
 
 const onAddRecipeClick = () => {
-  app.formMode = 'instruction';
+  app.formMode = 'ingredient';
   app.ingredientCount = 1;
   app.instructionCount = 1;
   $('.field-button').show();
   $('.option-button').hide();
   $('#add-new-recipe').show();
+  $('.recipe-part-forms').hide();
+  $('#ingredient-forms').show();
   ui.showNumberOfIngredients(app.ingredientCount);
   ui.showNumberOfInstructions(app.instructionCount);
 };
 
-const onTabClick = (event) => {
+const onFormTabClick = (event) => {
+  let formToShow = $(event.target).data('form');
+  app.formMode = $(event.target).data('mode');
+  $('.active').removeClass('active');
+  $(event.target).addClass('active');
+  $('.recipe-part-forms').hide();
+  $('#' + formToShow).show();
+};
+
+const onRecipeTabClick = (event) => {
   let listToShow = $(event.target).data('list');
   $('.active').removeClass('active');
   $(event.target).addClass('active');
@@ -73,29 +84,17 @@ const onEditRecipeClick = (event) => {
 
 const onAddField = () => {
   if (app.formMode === 'ingredient') {
-    $('#ingredient-forms').html('');
-    app.ingredientCount++;
-    ui.showNumberOfIngredients(app.ingredientCount);
+    ui.showNumberOfIngredients(1);
   } else if (app.formMode === 'instruction') {
-    $('#instruction-forms').html('');
-    app.instructionCount++;
-    ui.showNumberOfInstructions(app.instructionCount);
+    ui.showNumberOfInstructions(1);
   }
 };
 
 const onRemoveField = () => {
   if(app.formMode === 'ingredient') {
-    $('#ingredient-forms').html('');
-    if (app.ingredientCount > 1) {
-      app.ingredientCount--;
-    }
-    ui.showNumberOfIngredients(app.ingredientCount);
+    ui.removeIngredient();
   } else if (app.formMode === 'instruction') {
-    $('#instruction-forms').html('');
-    if (app.instructionCount > 1) {
-      app.instructionCount--;
-    }
-    ui.showNumberOfInstructions(app.instructionCount);
+    ui.removeInstruction();
   }
 };
 
@@ -108,7 +107,8 @@ const addHandlers = () => {
   $('#search-recipes-button').on('click', onSearchRecipesClick);
   $('#my-recipes-button').on('click', onMyRecipesClick);
   $('#add-recipe-button').on('click', onAddRecipeClick);
-  $('.recipe-tab').on('click', onTabClick);
+  $('.form-tab').on('click', onFormTabClick);
+  $('.recipe-tab').on('click', onRecipeTabClick);
   $('#recipe-list').on('click', '.my-recipe-listing .edit-button', onEditRecipeClick);
   $('#add-field-button').on('click', onAddField);
   $('#remove-field-button').on('click', onRemoveField);

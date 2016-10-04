@@ -42,7 +42,7 @@ const onAddNewRecipe = function (event) {
         let recipeingredientData = {
           recipeingredient: rawIngredientData.recipeingredient
         };
-        ingredientApi.searchIngredient(ingredientData)
+        ingredientApi.addIngredient(ingredientData)
           .done(function (ingredientResult) {
             recipeingredientData.recipeingredient.recipe_id = recipeResult.recipe.id;
             recipeingredientData.recipeingredient.ingredient_id = ingredientResult.ingredient.id;
@@ -56,7 +56,7 @@ const onAddNewRecipe = function (event) {
         let instructionData = getFormFields(instructionForms[i]);
         instructionData.instruction.recipe_id = recipeResult.recipe.id;
         api.addInstruction(instructionData)
-          .done(console.log('Success!'))
+          .done()
           .fail(ui.failure);
         }
       })

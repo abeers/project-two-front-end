@@ -146,25 +146,13 @@
           <button type="button" id='remove-field-button' class="field-button btn">
             -
           </button>
-          <div id=ingredient-forms>
-            <!-- <form class='ingredient-form'>
-              <input type="text" name="ingredient[name]" placeholder="Name of Ingredient">
-              <input type="number" name="recipeingredient[quantity]" placeholder="Quantity">
-              <input type="text" name="ingredient[units]" placeholder="Units">
-            </form>
-            <form class='ingredient-form'>
-              <input type="text" name="ingredient[name]" placeholder="Name of Ingredient">
-              <input type="number" name="recipeingredient[quantity]" placeholder="Quantity">
-              <input type="text" name="ingredient[units]" placeholder="Units">
-            </form> -->
+          <ul class='tabs'>
+            <li data-form='ingredient-forms' data-mode='ingredient' class='form-tab btn active'>Ingredients</li>
+            <li data-form='instruction-forms' data-mode='instruction' class='form-tab btn'>Instructions</li>
+          </ul>
+          <div id="ingredient-forms" class="recipe-part-forms">
           </div>
-          <div id=instruction-forms>
-            <!-- <form class='instruction-form'>
-              <input type="text" name="instruction[step]" placeholder="Instruction">
-            </form>
-            <form class='instruction-form'>
-              <input type="text" name="instruction[step]" placeholder="Instruction">
-            </form> -->
+          <div id="instruction-forms" class="recipe-part-forms">
           </div>
           <input type="submit" name="submit" value="Add recipe!">
         </fieldset>
