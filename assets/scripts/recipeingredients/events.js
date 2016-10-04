@@ -54,7 +54,9 @@ const onAddNewRecipe = function (event) {
         }
       for (let i = 0; i < instructionForms.length; i++) {
         let instructionData = getFormFields(instructionForms[i]);
+        console.log(instructionData);
         instructionData.instruction.recipe_id = recipeResult.recipe.id;
+        instructionData.instruction.stepnum = i + 1;
         api.addInstruction(instructionData)
           .done(ui.addRecipeSuccess)
           .fail(ui.failure);

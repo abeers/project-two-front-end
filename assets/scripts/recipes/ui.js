@@ -6,6 +6,21 @@ const ingredientListTemplate = require('../templates/ingredient-listing.handleba
 const instructionListTemplate = require('../templates/instruction-listing.handlebars');
 const viewState = require('../viewstates/ui.js');
 
+const sortInstructions = (recipe) => {
+  Array.prototype.sortOn = function(key){
+      this.sort(function(a, b){
+          if(a[key] < b[key]){
+              return -1;
+          }else if(a[key] > b[key]){
+              return 1;
+          }
+          return 0;
+      });
+  };
+
+  recipe.instructions.sortOn('stepnum');
+};
+
 const indexRecipesSuccess = (recipes) => {
   $('.option-button').hide();
   $('#recipe-list').show();
@@ -14,7 +29,9 @@ const indexRecipesSuccess = (recipes) => {
 };
 
 const getListingSuccess = (recipe) => {
+  console.log(recipe);
   $('#recipe-title').html(recipe.recipe.name);
+  sortInstructions(recipe.recipe);
   $('#recipe-ingredient-list').html(ingredientListTemplate(recipe));
   $('#recipe-instruction-list').html(instructionListTemplate(recipe));
   viewState.setRecipeIngredientsView();
