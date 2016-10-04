@@ -38,13 +38,10 @@ const onSearchRecipesClick = () => {
   $('#recipe-list').children('*').show();
 };
 
-// const onMyRecipesClick = () => {
-//   $('.option-button').hide();
-//   // $('#my-recipes').show();
-//   $('#recipe-list').show();
-//   $('#recipe-list').children('*').show();
-//   recipeEvents.onMyRecipes();
-// };
+const onRouletteClick = (event) => {
+  event.preventDefault();
+  ui.setRouletteView();
+};
 
 const onAddRecipeClick = () => {
   app.formMode = 'ingredient';
@@ -105,10 +102,9 @@ const addHandlers = () => {
   $('#sign-up-button').on('click', onSignUpClick);
   $('#home-button').on('click', onHomeClick);
   $('#change-password-button').on('click', onChangePasswordClick);
-  // $('#find-recipes-button').on('click', onFindRecipesClick);
   $('#search-recipes-button').on('click', onSearchRecipesClick);
-  // $('#my-recipes-button').on('click', onMyRecipesClick);
   $('#add-recipe-button').on('click', onAddRecipeClick);
+  $('#roulette-button').on('click', onRouletteClick);
   $('.form-tab').on('click', onFormTabClick);
   $('.recipe-tab').on('click', onRecipeTabClick);
   $('#recipe-list').on('click', '.my-recipe-listing .edit-button', onEditRecipeClick);

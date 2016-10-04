@@ -79,6 +79,13 @@ const onDeleteClick = (event) => {
     .fail(ui.failure);
 };
 
+const onSpin = (event) => {
+  event.preventDefault();
+  api.getRandomRecipe()
+    .done(ui.recipeRouletteSuccess)
+    .fail(ui.failure);
+};
+
 const addHandlers = () => {
   $('#find-recipes-button').on('click', onIndexRecipes);
   $('#search-for-recipe').on('submit', onSearchRecipes);
@@ -88,6 +95,7 @@ const addHandlers = () => {
   $('#recipe-list').on('click', '.recipe-listing', onGetListing);
   $('#recipe-list').on('click', '.my-recipe-listing .recipe-name', onGetListing);
   $('#recipe-list').on('click', '.my-recipe-listing .delete-button', onDeleteClick);
+  $('#spin-button').on('click', onSpin);
 };
 
 module.exports = {
