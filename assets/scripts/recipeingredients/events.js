@@ -45,7 +45,6 @@ const onAddNewRecipe = function (event) {
         };
         ingredientApi.searchIngredient(ingredientData)
           .done(function (ingredientResult) {
-            console.log(ingredientResult);
             recipeingredientData.recipeingredient.recipe_id = recipeResult.recipe.id;
             recipeingredientData.recipeingredient.ingredient_id = ingredientResult.ingredient.id;
             api.addRecipeingredient(recipeingredientData)
@@ -56,7 +55,6 @@ const onAddNewRecipe = function (event) {
         }
       for (let i = 0; i < instructionForms.length; i++) {
         let instructionData = getFormFields(instructionForms[i]);
-        console.log(instructionData);
         instructionData.instruction.recipe_id = recipeResult.recipe.id;
         instructionData.instruction.stepnum = i + 1;
         api.addInstruction(instructionData)

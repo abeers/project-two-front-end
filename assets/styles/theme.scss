@@ -161,6 +161,10 @@ input[name='submit'] {
   background-color: $active-tab-background-color;
 }
 
+.roulette-button {
+  font-size: 2 * $font-size;
+}
+
 .sign_in_button {
   background-color: shade($welcome-button-background-color, 25);
 }
@@ -175,6 +179,7 @@ input[name='submit'] {
   color: $buttercup;
   font-family: $title-font-family;
   font-size: 2.5 * $font-size;
+  margin: 10px auto;
   padding: 10px 20px;
 }
 

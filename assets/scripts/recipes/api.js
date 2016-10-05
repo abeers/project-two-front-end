@@ -85,6 +85,17 @@ const getRandomRecipe = () => {
   });
 };
 
+const getRandomRecipeIng = (data) => {
+  return $.ajax({
+    url: app.host + '/randomrecipeing',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: data
+  });
+};
+
 module.exports = {
   indexRecipes,
   getRecipe,
@@ -93,5 +104,6 @@ module.exports = {
   addRecipe,
   updateRecipe,
   deleteRecipe,
-  getRandomRecipe
+  getRandomRecipe,
+  getRandomRecipeIng
 };

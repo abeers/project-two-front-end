@@ -21,7 +21,7 @@ const onSearchRecipes = function (event) {
 
   api.searchRecipes(data)
     .done(ui.searchRecipesSuccess)
-    .fail(ui.searchFailure);
+    .fail(ui.failure);
 };
 
 const onMyRecipes = function (event) {
@@ -68,7 +68,6 @@ const onGetListing = function (event) {
 
 const onDeleteClick = (event) => {
   event.preventDefault();
-  // alert('Are you sure you want to delete this recipe?');
   let recipeId = $(event.target).data('id');
   api.deleteRecipe(recipeId)
     .done(function () {
@@ -81,9 +80,22 @@ const onDeleteClick = (event) => {
 
 const onSpin = (event) => {
   event.preventDefault();
-  api.getRandomRecipe()
-    .done(ui.recipeRouletteSuccess)
-    .fail(ui.failure);
+  let form = $('#roulette-by-ingredient');
+  if (form.val()) {
+    let data = {
+      ingredient: {
+        name: form.val()
+      }
+    };
+    api.getRandomRecipeIng(data)
+      .done(ui.recipeRouletteSuccess)
+      .fail(ui.searchFailure);
+  }
+  else {
+    api.getRandomRecipe()
+      .done(ui.recipeRouletteSuccess)
+      .fail(ui.failure);
+  }
 };
 
 const addHandlers = () => {

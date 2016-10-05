@@ -37,7 +37,11 @@ const getListingSuccess = (recipe) => {
 };
 
 const searchRecipesSuccess = (recipes) => {
-  $('#recipe-list').html(recipeCardTemplate(recipes));
+  if(recipes.recipes.length === 0) {
+    $('#recipe-list').html('No recipes found');
+  } else {
+    $('#recipe-list').html(recipeCardTemplate(recipes));
+  }
 };
 
 const myRecipesSuccess = (recipes) => {
@@ -57,7 +61,6 @@ const deleteRecipeSuccess = () => {
 };
 
 const recipeRouletteSuccess = (recipes) => {
-  console.log(recipes);
   $('#recipe-list').html(recipeCardTemplate(recipes));
 };
 
@@ -66,7 +69,7 @@ const searchFailure = () => {
 };
 
 const failure = (error) => {
-  console.error(error);
+  // console.error(error);
 };
 
 module.exports = {

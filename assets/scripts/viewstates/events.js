@@ -24,12 +24,12 @@ const onChangePasswordClick = () => {
   $('#change-password').show();
 };
 
-const onFindRecipesClick = () => {
-  $('.option-button').hide();
-  $('#index-recipes').show();
-  $('#recipe-list').show();
-  $('#recipe-list').children('*').show();
-};
+// const onFindRecipesClick = () => {
+//   $('.option-button').hide();
+//   $('#index-recipes').show();
+//   $('#recipe-list').show();
+//   $('#recipe-list').children('*').show();
+// };
 
 const onSearchRecipesClick = () => {
   $('.option-button').hide();
