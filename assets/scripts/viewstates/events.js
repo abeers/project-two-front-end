@@ -38,6 +38,13 @@ const onSearchRecipesClick = () => {
   $('#recipe-list').children('*').show();
 };
 
+const onSearchByIngredientClick = () => {
+  $('.option-button').hide();
+  $('#search-by-ingredient').show();
+  $('#recipe-list').show();
+  $('#recipe-list').children('*').show();
+};
+
 const onRouletteClick = (event) => {
   event.preventDefault();
   ui.setRouletteView();
@@ -103,6 +110,7 @@ const addHandlers = () => {
   $('#home-button').on('click', onHomeClick);
   $('#change-password-button').on('click', onChangePasswordClick);
   $('#search-recipes-button').on('click', onSearchRecipesClick);
+  $('#search-by-ingredient-button').on('click', onSearchByIngredientClick);
   $('#add-recipe-button').on('click', onAddRecipeClick);
   $('#roulette-button').on('click', onRouletteClick);
   $('.form-tab').on('click', onFormTabClick);

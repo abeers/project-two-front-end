@@ -39,11 +39,13 @@ const onAddNewRecipe = function (event) {
         let ingredientData = {
           ingredient: rawIngredientData.ingredient
         };
+        ingredientData.ingredient.name = ingredientData.ingredient.name.toLowerCase();
         let recipeingredientData = {
           recipeingredient: rawIngredientData.recipeingredient
         };
-        ingredientApi.addIngredient(ingredientData)
+        ingredientApi.searchIngredient(ingredientData)
           .done(function (ingredientResult) {
+            console.log(ingredientResult);
             recipeingredientData.recipeingredient.recipe_id = recipeResult.recipe.id;
             recipeingredientData.recipeingredient.ingredient_id = ingredientResult.ingredient.id;
             api.addRecipeingredient(recipeingredientData)

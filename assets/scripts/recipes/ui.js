@@ -61,6 +61,10 @@ const recipeRouletteSuccess = (recipes) => {
   $('#recipe-list').html(recipeCardTemplate(recipes));
 };
 
+const searchFailure = () => {
+  $('#recipe-list').html('No recipes found');
+};
+
 const failure = (error) => {
   console.error(error);
 };
@@ -73,5 +77,6 @@ module.exports = {
   updateRecipeSuccess,
   deleteRecipeSuccess,
   recipeRouletteSuccess,
+  searchFailure,
   failure
 };

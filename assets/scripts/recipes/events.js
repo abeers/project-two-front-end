@@ -21,7 +21,7 @@ const onSearchRecipes = function (event) {
 
   api.searchRecipes(data)
     .done(ui.searchRecipesSuccess)
-    .fail(ui.failure);
+    .fail(ui.searchFailure);
 };
 
 const onMyRecipes = function (event) {
