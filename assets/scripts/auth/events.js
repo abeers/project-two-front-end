@@ -15,7 +15,7 @@ const onSignUp = function (event) {
   .done(function (data, textStatus, jqXHR) {
     api.signIn(data, textStatus, jqXHR, signUpData)
       .done(ui.signInSuccess)
-      .fail(ui.logInFailure);
+      .fail(ui.signInFailure);
   })
   .fail(ui.failure);
 };
@@ -28,7 +28,7 @@ const onSignIn = function (event) {
 
   api.signIn(data)
     .done(ui.signInSuccess)
-    .fail(ui.failure);
+    .fail(ui.signInFailure);
 };
 
 const onChangePassword = function (event) {

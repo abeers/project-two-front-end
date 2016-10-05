@@ -1,7 +1,7 @@
 'use strict';
 
 const app = {
-  host: 'https://potluckapi.herokuapp.com',
+  host: 'https://potluck-api.herokuapp.com',
 };
 
 module.exports = app;

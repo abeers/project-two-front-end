@@ -1,18 +1,25 @@
 $background-color: $cream;
 $navbar-background-color: tint($buttercup, 10);
 $nav-button-background-color: $goldenorange;
-$option-button-color: $goldenbrown;
+$option-button-color: $buttercup;
 $recipe-listing-background-color: $buttercup;
 $recipe-tab-background-color: $buttercup;
 $active-tab-background-color: $goldenorange;
 $welcome-button-background-color: $bluegreen;
+$modify-button-background-color: $bluegreen;
 
 $font-color: $charcoal;
 $navbar-font-color: shade($font-color, 30);
 $welcome-button-font-color: $white;
+$modify-button-font-color: $white;
+$option-button-font-color: $charcoal;
+
+$option-button-border-color: $goldenbrown;
+$option-button-border-width: 2px;
 
 $body-max-width: 100%;
 $main-image-width: 200px;
+$option-button-width: 90%;
 
 $body-vertical-margin: 90px;
 $button-margin: 15px;
@@ -35,15 +42,45 @@ ul {
   text-align: left;
 }
 
-// .dropmenu {
-//   background-color: $nav-button-background-color;
-//   color: $font-color;
-//   opacity: .92;
-//   padding: 30px 10px 10px;
-//   position: fixed;
-//   text-align: left;
-//   z-index: 2;
-// }
+input[name='recipe[name]'] {
+  font-size: 1.2 * $font-size;
+  width: 70%;
+}
+
+input[name='recipe[time]'] {
+  width: 20%;
+}
+
+input[name='ingredient[name]'] {
+  width: 50%;
+}
+
+input[name='recipeingredient[quantity]'] {
+  width: 20%;
+}
+
+input[name='ingredient[units]'] {
+  width: 20%;
+}
+
+input[name='instruction[step]'] {
+  width: 90%;
+}
+
+input[name='submit'] {
+  background-color: $bluegreen;
+  color: $white;
+  font-size: 1.2 * $font-size;
+  margin: $button-margin;
+  width: 50%;
+}
+
+.field-button {
+  background-color: $bluegreen;
+  color: $buttercup;
+  float: right;
+  margin: $button-margin .5 * $button-margin 0;
+}
 
 .ingredient-listing {
   font-size: $font-size;
@@ -65,6 +102,7 @@ ul {
 
 .modify_button {
   background-color: $bluegreen;
+  clear: left;
   color: $white;
   float: right;
   font-size: .8 * $font-size;
@@ -85,9 +123,12 @@ ul {
 
 .option_button {
   background-color: $option-button-color;
+  border: $option-button-border-width solid $option-button-border-color;
+  color: $option-button-font-color;
   display: block;
   font-size: 1.2 * $font-size;
   margin: $button-margin;
+  min-width: $option-button-width;
 }
 
 .recipe-list {
@@ -109,15 +150,19 @@ ul {
   font-size: 3 * $font-size;
 }
 
-.recipe-tab {
+.recipe-tab, .form-tab {
   background-color: $recipe-tab-background-color;
   font-size: $font-size;
-  margin: 0;
+  margin: .5 * $button-margin 0;
   width: 49%;
 }
 
-.recipe-tab.active {
+.recipe-tab.active, .form-tab.active {
   background-color: $active-tab-background-color;
+}
+
+.roulette-button {
+  font-size: 2 * $font-size;
 }
 
 .sign_in_button {
@@ -126,6 +171,16 @@ ul {
 
 .sign_up_button {
   background-color: tint($welcome-button-background-color, 25);
+}
+
+.spin-button {
+  background-color: tint($charcoal, 25);
+  border: 5px solid $buttercup;
+  color: $buttercup;
+  font-family: $title-font-family;
+  font-size: 2.5 * $font-size;
+  margin: 10px auto;
+  padding: 10px 20px;
 }
 
 .tabs {

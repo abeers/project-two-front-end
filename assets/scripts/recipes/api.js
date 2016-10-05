@@ -75,6 +75,27 @@ const deleteRecipe = (recipeId) => {
   });
 };
 
+const getRandomRecipe = () => {
+  return $.ajax({
+    url: app.host + '/randomrecipe',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  });
+};
+
+const getRandomRecipeIng = (data) => {
+  return $.ajax({
+    url: app.host + '/randomrecipeing',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: data
+  });
+};
+
 module.exports = {
   indexRecipes,
   getRecipe,
@@ -82,5 +103,7 @@ module.exports = {
   myRecipes,
   addRecipe,
   updateRecipe,
-  deleteRecipe
+  deleteRecipe,
+  getRandomRecipe,
+  getRandomRecipeIng
 };

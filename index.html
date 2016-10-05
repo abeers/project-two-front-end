@@ -42,11 +42,17 @@
       </button>
       <!-- end welcome buttons -->
       <!-- user buttons -->
+      <button type="button" id='roulette-button' class="roulette-button option-button option_button btn">
+        Recipe Roulette
+      </button>
       <button type="button" id='find-recipes-button' class="option-button option_button btn">
         Find Recipes
       </button>
       <button type="button" id='search-recipes-button' class="option-button option_button btn">
         Search for Recipe
+      </button>
+      <button type="button" id='search-by-ingredient-button' class="option-button option_button btn">
+        Search by Ingredient
       </button>
       <button type="button" id='my-recipes-button' class="option-button option_button btn">
         My Recipes
@@ -60,9 +66,9 @@
       <!-- end user buttons -->
 
       <!-- authentication forms -->
+      <p id='sign-in-error'></p>
       <form id="sign-up">
         <fieldset>
-          <legend>Sign up!</legend>
           <input type="email" name="credentials[email]" placeholder="Email">
           <input type="password" name="credentials[password]" placeholder="New password">
           <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
@@ -71,7 +77,6 @@
       </form>
       <form id="sign-in">
         <fieldset>
-          <legend>Sign in!</legend>
           <input type="email" name="credentials[email]" placeholder="Email">
           <input type="password" name="credentials[password]" placeholder="Password">
           <input type="submit" name="submit" value="Sign in!">
@@ -79,10 +84,9 @@
       </form>
       <form id="change-password">
         <fieldset>
-          <legend>Change password</legend>
           <input type="password" name="passwords[old]" placeholder="Old password">
           <input type="password" name="passwords[new]" placeholder="New password">
-          <input type="submit" name="submit" value="Change password">
+          <input type="submit" name="submit" value="Change">
         </fieldset>
       </form>
       <!-- end of authentication forms -->
@@ -137,23 +141,51 @@
         <fieldset>
           <legend>Add a recipe!</legend>
           <input type="text" name="recipe[name]" placeholder="Name of Recipe">
-          <input type="number" name="recipe[time]" placeholder="Number of Minutes to Make">
-          <input type="text" name="ingredient[name]" placeholder="Name of Ingredient">
-          <input type="number" name="recipeingredient[quantity]" placeholder="Quantity">
-          <input type="text" name="ingredient[units]" placeholder="Units">
-          <input type="text" name="instruction[step]" placeholder="Instruction">
-          <input type="submit" name="submit" value="Add recipe!">
+          <input type="number" name="recipe[time]" placeholder="Min.">
+          <form>
+          </form>
+          <br>
+          <button type="button" id='add-field-button' class="field-button btn">
+            +
+          </button>
+          <button type="button" id='remove-field-button' class="field-button btn">
+            -
+          </button>
+          <br>
+          <br>
+          <ul class='tabs'>
+            <li data-form='ingredient-forms' data-mode='ingredient' class='form-tab btn active'>Ingredients</li>
+            <li data-form='instruction-forms' data-mode='instruction' class='form-tab btn'>Instructions</li>
+          </ul>
+          <div id="ingredient-forms" class="recipe-part-forms">
+          </div>
+          <div id="instruction-forms" class="recipe-part-forms">
+          </div>
+          <input type="submit" name="submit" value="Add recipe">
         </fieldset>
       </form>
       <form id="search-for-recipe">
         <fieldset>
-          <legend>Search for recipe!</legend>
           <input type="text" name="recipe[name]" placeholder="Name of Recipe">
-          <input type="submit" name="submit" value="Search for recipe!">
+          <input type="submit" name="submit" value="Search">
+        </fieldset>
+      </form>
+      <form id="search-by-ingredient">
+        <fieldset>
+          <input type="text" name="ingredient[name]" placeholder="Name of Ingredient">
+          <input type="submit" name="submit" value="Search">
         </fieldset>
       </form>
       <!-- end of combined forms -->
-
+      <!-- roulette -->
+      <div id='roulette'>
+        <img id="roulette-image" class="main_image" alt="Pot of gold" src="pot_of_gold.png">
+        <input id="roulette-by-ingredient" type="text" name="ingredient[name]" placeholder="Ingredient or All">
+        <button type="button" id='spin-button' class="spin-button btn">
+          Give Me The Gold
+        </button>
+      </div>
+      <!-- end of roulette -->
       <!-- recipe list -->
       <ul id='recipe-list' class='recipe-list'>
       </ul>

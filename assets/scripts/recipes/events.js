@@ -50,7 +50,11 @@ const onUpdateRecipe = function (event) {
   let data = getFormFields(form);
 
   api.updateRecipe(data)
-    .done(ui.updateRecipeSuccess)
+    .done(function () {
+      api.myRecipes()
+        .done(ui.myRecipesSuccess)
+        .fail(ui.failure);
+    })
     .fail(ui.failure);
 };
 
@@ -64,24 +68,49 @@ const onGetListing = function (event) {
 
 const onDeleteClick = (event) => {
   event.preventDefault();
-  // alert('Are you sure you want to delete this recipe?');
   let recipeId = $(event.target).data('id');
   api.deleteRecipe(recipeId)
-    .done(ui.deleteRecipeSuccess)
+    .done(function () {
+      api.myRecipes()
+        .done(ui.myRecipesSuccess)
+        .fail(ui.failure);
+    })
     .fail(ui.failure);
 };
 
+const onSpin = (event) => {
+  event.preventDefault();
+  let form = $('#roulette-by-ingredient');
+  if (form.val()) {
+    let data = {
+      ingredient: {
+        name: form.val()
+      }
+    };
+    api.getRandomRecipeIng(data)
+      .done(ui.recipeRouletteSuccess)
+      .fail(ui.searchFailure);
+  }
+  else {
+    api.getRandomRecipe()
+      .done(ui.recipeRouletteSuccess)
+      .fail(ui.failure);
+  }
+};
+
 const addHandlers = () => {
-  $('#index-recipes').on('submit', onIndexRecipes);
+  $('#find-recipes-button').on('click', onIndexRecipes);
   $('#search-for-recipe').on('submit', onSearchRecipes);
-  $('#my-recipes').on('submit', onMyRecipes);
+  $('#my-recipes-button').on('click', onMyRecipes);
   $('#add-recipe').on('submit', onAddRecipe);
   $('#update-recipe').on('submit', onUpdateRecipe);
   $('#recipe-list').on('click', '.recipe-listing', onGetListing);
   $('#recipe-list').on('click', '.my-recipe-listing .recipe-name', onGetListing);
   $('#recipe-list').on('click', '.my-recipe-listing .delete-button', onDeleteClick);
+  $('#spin-button').on('click', onSpin);
 };
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onMyRecipes
 };

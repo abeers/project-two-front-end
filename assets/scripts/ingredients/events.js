@@ -24,9 +24,21 @@ const onAddIngredient = function (event) {
     .fail(ui.failure);
 };
 
+const onSearchByIngredient = function (event) {
+  event.preventDefault();
+  let form = event.target;
+
+  let data = getFormFields(form);
+
+  api.searchByIngredient(data)
+    .done(ui.searchByIngredientSuccess)
+    .fail(ui.searchFailure);
+};
+
 const addHandlers = () => {
   $('#index-ingredients').on('submit', onIndexIngredients);
   $('#add-ingredient').on('submit', onAddIngredient);
+  $('#search-by-ingredient').on('submit', onSearchByIngredient);
 };
 
 module.exports = {
