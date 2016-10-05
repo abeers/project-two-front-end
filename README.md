@@ -21,4 +21,5 @@ After creating an account and logging in, users can navigate a menu of options f
 
 ## Links
 - Client: https://abeers.github.io/project-two-front-end/
-- Server: https://www.potluckapi.herokuapp.com/
+- Server: https://potluck-api.herokuapp.com/
+- Back-End Repo: https://github.com/abeers/project-two-back-end
