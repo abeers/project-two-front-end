@@ -110,6 +110,7 @@ const addHandlers = () => {
   $('#recipe-list').on('click', '.my-recipe-listing .edit-button', onEditRecipeClick);
   $('#add-field-button').on('click', onAddField);
   $('#remove-field-button').on('click', onRemoveField);
+  $('#main-image').on('click', ui.setInitialView);
 };
 
 module.exports = {
